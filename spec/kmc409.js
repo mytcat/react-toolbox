@@ -10,16 +10,34 @@ import TopBar from './components/topbar';
 
 import style from './style';
 
+const fieldsContainer = {
+  display: 'flex',
+  justifyContent: 'space-around'
+};
 
+const fieldStyle = {
+  width: '45%'
+}
+
+const bottomFields = {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'flex-end'
+}
+
+const cardButtons = {
+    display: 'flex',
+    justifyContent: 'flex-end'
+}
 
 const Kmc409 = () => (
 
-  <div className={style.app}>
+  <div>
+    <TopBar></TopBar>
     <Card style={{width: '100%'}}>
-      <TopBar></TopBar>
       <Dropdowns></Dropdowns>
       <IdInput></IdInput>
-      <div style={{display: "flex", justifyContent:"flex-end"}}>
+      <div style={cardButtons}>
         <CardActions>
           <Button label="cancel" disabled/>
           <Button label="finish" />
@@ -59,7 +77,6 @@ class Dropdowns extends React.Component {
     this.setState(newState);
   };
 
-
   customImg (item) {
     const contentStyle = {
       display: 'none'
@@ -80,8 +97,8 @@ class Dropdowns extends React.Component {
   render () {
     return (
       <div>
-        <div style={{display: 'flex', justifyContent: 'space-around'}}>
-          <div style={{width: '45%'}}>
+        <div style={fieldsContainer}>
+          <div style={fieldStyle}>
             <Dropdown
               label="Hardware type"
               ref="dropdown1"
@@ -91,29 +108,29 @@ class Dropdowns extends React.Component {
               value={this.state.dropdown1}
             />
           </div>
-          <div style={{width: '45%'}}>
+          <div style={fieldStyle}>
             <Dropdown
               label="Manufacturer"
               ref="dropdown1"
-              onChange={this.handleChange.bind(this, 'dropdown1')}
+              onChange={this.handleChange.bind(this, 'dropdown2')}
               source={manufacturers}
               template={this.customDropdownItem}
               value={this.state.dropdown1}
             />
           </div>
         </div>
-        <div style={{display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end'}}>
-            <div style={{width: '45%'}}>
+        <div style={bottomFields}>
+            <div style={fieldStyle}>
                 <Dropdown
                   label="Hardware model"
                   ref="dropdown1"
-                  onChange={this.handleChange.bind(this, 'dropdown1')}
+                  onChange={this.handleChange.bind(this, 'dropdown3')}
                   source={hardware_model}
                   template={this.customDropdownItem}
                   value={this.state.dropdown1}
                 />
             </div>
-            <div style={{width: '45%'}}>
+            <div style={fieldStyle}>
               <Input type='text' label='Unique ID' name='id' value={this.state.id} onChange={this.handleChange.bind(this, 'id')} />
             </div>
         </div>
@@ -125,8 +142,8 @@ class Dropdowns extends React.Component {
 class IdInput extends React.Component {
   state = { id: ''};
 
-  handleChange = (name, value) => {
-    this.setState({...this.state, [name]: value});
+  handleChange = (id, value) => {
+    this.setState({...this.state, [id]: value});
   };
 
   render () {
