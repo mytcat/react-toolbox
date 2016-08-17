@@ -10,9 +10,27 @@ import TopBar from './components/topbar';
 
 import style from './style';
 
-const fieldsContainer = {
+const photoButtonContainer = {
+  alignSelf: 'center',
+  padding: '50px 0 70px 0'
+}
+
+const photoButton = {
+  color: '#4e4e4e',
+  border: '1px dashed',
+  fontSize: '30px',
+  background: '#F4F5F5',
+  padding: '80px 70px 110px 80px'
+}
+
+const cardContainer = {
+  padding: '30px 80px'
+}
+
+const topFields = {
   display: 'flex',
-  justifyContent: 'space-around'
+  justifyContent: 'space-around',
+  paddingTop: '20px'
 };
 
 const fieldStyle = {
@@ -30,20 +48,33 @@ const cardButtons = {
     justifyContent: 'flex-end'
 }
 
+const cancelButton = {
+  color: '#808080'
+}
+
+const finishButton = {
+  color: '#2868C2'
+}
+
 const Kmc409 = () => (
 
   <div>
     <TopBar></TopBar>
-    <Card style={{width: '100%'}}>
-      <Dropdowns></Dropdowns>
-      <IdInput></IdInput>
-      <div style={cardButtons}>
-        <CardActions>
-          <Button label="cancel" disabled/>
-          <Button label="finish" />
-        </CardActions>
-      </div>
-    </Card>
+    <div style={cardContainer}>
+      <Card style={{width: '100%'}}>
+        <div style={photoButtonContainer}>
+          <Button icon="photo_camera" medium style={photoButton}></Button>
+        </div>
+        <Dropdowns></Dropdowns>
+        <IdInput></IdInput>
+        <div style={cardButtons}>
+          <CardActions>
+            <Button label="cancel" style={cancelButton}/>
+            <Button label="finish" style={finishButton}/>
+          </CardActions>
+        </div>
+      </Card>
+    </div>
 
 
   </div>
@@ -97,7 +128,7 @@ class Dropdowns extends React.Component {
   render () {
     return (
       <div>
-        <div style={fieldsContainer}>
+        <div style={topFields}>
           <div style={fieldStyle}>
             <Dropdown
               label="Hardware type"
