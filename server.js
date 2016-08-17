@@ -16,9 +16,15 @@ app.use(require('webpack-dev-middleware')(compiler, {
 
 app.use(require('webpack-hot-middleware')(compiler));
 
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/index.html'));
 });
+
+app.get('/kmc409', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/kmc409.html'));
+});
+
+
 
 app.listen(8080, '0.0.0.0', function (err) {
   if (err) {
