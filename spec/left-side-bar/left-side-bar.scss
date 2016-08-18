@@ -30,6 +30,9 @@ $default-REM : 1.8rem;
     border-color: transparent;
     box-shadow: 0 0 0 transparent;
   }
+  &--logo {
+    //background: url("../../static/img/Live4_logo_grey.png");
+  }
   &--divider {
     @extend %divider;
     background: $chip-avatar-background-light;

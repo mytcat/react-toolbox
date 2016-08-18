@@ -26,6 +26,15 @@ app.get('/kmc409', function (req, res) {
 app.get('/kmc416', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/task__kmc-416/index.html'));
 });
+app.get('/kmc417', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/task__kmc-417/index.html'));
+});
+app.get('/kmc418', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/task__kmc-418/index.html'));
+});
+app.get('/kmc419', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/task__kmc-419/index.html'));
+});
 app.get('/container', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/index.html'));
 });

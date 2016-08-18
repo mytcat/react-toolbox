@@ -53,9 +53,10 @@ const styleForNavigationButtonsWrapper = {
 
 class Kmc416 extends Component{
 
-  renderNavigationSection(){
+  renderNavigationSection(activeIndexed = []){
     const headers = [HEADER_MAIN_INFORMATION, HEADER_ACCOUNT_INFORMATION,
       HEADER_ORGANIZATION_ADMINS,HEADER_HARDWARE,HEADER_SUMMARY];
+
     return (
       <div className={this.props.theme[CSS_HEADER_CHIP_SECTION]}>
         {

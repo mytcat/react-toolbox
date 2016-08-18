@@ -22,6 +22,7 @@ export const FORM_PHONE = 'Phone';
 // buttons
 export const BUTTON_NEXT = 'Next';
 export const BUTTON_CANCEL = 'Cancel';
+export const BUTTON_BACK = 'Back';
 
 // CSS classes
 

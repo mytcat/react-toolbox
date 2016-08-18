@@ -14,8 +14,8 @@ $default-REM : 1.8rem;
   height: 2px;
 }
 .kmc416 {
-  margin-left : $default-REM * 7;
-  margin-right : $default-REM * 7;
+  margin-left : $default-REM * 6;
+  margin-right : $default-REM * 6;
   &--divider {
     @extend %divider;
     background: $chip-avatar-background;

@@ -17,6 +17,10 @@ $ cd docs/
 $ npm install
 $ npm start
 $ open http://0.0.0.0:8080/kmc#
+$ open http://0.0.0.0:8080/kmc416
+$ open http://0.0.0.0:8080/kmc417
+$ open http://0.0.0.0:8080/kmc418
+$ open http://0.0.0.0:8080/kmc419
 ```
 
 ## Prerequisites

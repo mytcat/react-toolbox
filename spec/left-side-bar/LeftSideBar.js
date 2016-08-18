@@ -11,6 +11,8 @@ const TooltipButton = Tooltip(Button);
 const CSS_LEFT_SIDE_BAR = 'leftSideBar';
 const CSS_LEFT_SIDE_BAR_DIVIDER = 'leftSideBar--divider';
 const CSS_LEFT_SIDE_BAR_ICON = 'leftSideBar--icon';
+const CSS_LEFT_SIDE_BAR_ICON_LOGO = 'leftSideBar--logo';
+
 class LeftSideBar extends Component {
 
 
@@ -21,7 +23,7 @@ class LeftSideBar extends Component {
     * */
     return (
       <div className={theme[CSS_LEFT_SIDE_BAR]}>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camera"/>}/>
+        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camera"/>
         <div className={theme[CSS_LEFT_SIDE_BAR_DIVIDER]}></div>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="launch" floating/>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="build" floating/>
