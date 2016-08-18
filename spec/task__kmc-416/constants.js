@@ -36,6 +36,8 @@ export const FORM_NOTES = 'Notes';
 export const BUTTON_NEXT = 'Next';
 export const BUTTON_CANCEL = 'Cancel';
 export const BUTTON_BACK = 'Back';
+export const BUTTON_BACK_TO_ORG_LIST = 'Back to organization list';
+export const BUTTON_VIEW_ORG_LIST = 'View to organization list';
 
 // CSS classes
 
@@ -45,4 +47,7 @@ export const CSS_HEADER_CHIP_LINE = `${TASK_KMC_ID}_header--chip--line`;
 export const CSS_HEADER_CHIP_AVATAR = `${TASK_KMC_ID}_header--chip--avatar`;
 export const CSS_HEADER_CHIP_AVATAR_ACTIVE = `${TASK_KMC_ID}_header--chip--avatar--active`;
 export const CSS_CLASS_DIVIDER = `${TASK_KMC_ID}--divider`;
+export const CSS_CARD_TITLE = `${TASK_KMC_ID}--card--title`;
+export const CSS_CARD_GROUP = `${TASK_KMC_ID}--card--group`;
+export const CSS_CLASS_CARD = `${TASK_KMC_ID}--card`;
 

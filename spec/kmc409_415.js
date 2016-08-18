@@ -11,6 +11,9 @@ import {LeftSideBarBlue} from './left-side-bar/LeftSideBarBlue.js';
 import {PhotoButton} from './custom-components/PhotoButton.js';
 import style from './style';
 
+import {themr} from 'react-css-themr';
+import customDropDown from './customDropDown.scss';
+
 const photoButtonContainer = {
   alignSelf: 'center',
   padding: '50px 0 70px 0'
@@ -120,7 +123,7 @@ class Dropdowns extends React.Component {
       <div>
         <div style={topFields}>
           <div style={fieldStyle}>
-            <Dropdown
+            <ThemedDropDown
               label="Hardware type"
               ref="dd1"
               onChange={this.dropDown1Changed.bind(this)}
@@ -130,7 +133,7 @@ class Dropdowns extends React.Component {
             />
           </div>
           <div style={fieldStyle}>
-            <Dropdown
+            <ThemedDropDown
               label="Manufacturer"
               ref="dd2"
               onChange={this.dropDown2Changed.bind(this)}
@@ -142,7 +145,7 @@ class Dropdowns extends React.Component {
         </div>
         <div style={bottomFields}>
             <div style={fieldStyle}>
-                <Dropdown
+                <ThemedDropDown
                   label="Hardware model"
                   ref="dd3"
                   onChange={this.dropDown3Changed.bind(this)}
@@ -160,6 +163,7 @@ class Dropdowns extends React.Component {
   }
 }
 
+
 class IdInput extends React.Component {
   state = { id: ''};
 
@@ -172,13 +176,13 @@ class IdInput extends React.Component {
   }
 }
 
-const Kmc409_415 = () => (
-
-  <div>
+const Kmc409_415 = ({theme}) => {
+  return (
+   <div>
     <TopBar></TopBar>
     <LeftSideBarBlue></LeftSideBarBlue>
     <div style={cardContainer}>
-      <Card style={{width: '100%'}}>
+      <Card  className={theme['customDropDown--card']} style={{width: '100%'}}>
         <PhotoButton icon="photo_camera">
         </PhotoButton>
         <Dropdowns></Dropdowns>
@@ -194,8 +198,21 @@ const Kmc409_415 = () => (
 
 
   </div>
-);
+)
+};
 
+/* DropDown*/
+const CustomDropDown = ({theme, ...props}) =>{
+  return (
 
+    <Dropdown
+      className={theme.customDropDown}
+      {...props}
+    />
+  )
+};
 
-export default Kmc409_415;
+const applyTheme = (Com)=>themr('customDropDown', customDropDown)(Com);
+const ThemedDropDown = applyTheme(CustomDropDown);
+const ThemedKmc409_415 = applyTheme(Kmc409_415);
+export {ThemedKmc409_415 as _Kmc409_415};

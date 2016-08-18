@@ -8,7 +8,6 @@ import {Input} from '../../components/input';
 import {NavigationSection} from '../custom-components/NavigationSection';
 import style from '../style';
 import {PhotoButton} from '../custom-components/PhotoButton';
-import {BUTTON_BACK} from '../task__kmc-416/constants';
 
 // import constants
 import {

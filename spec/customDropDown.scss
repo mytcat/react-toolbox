@@ -1,0 +1,15 @@
+.customDropDown {
+  & ul {
+    top : 4em !important;
+    bottom : -4em !important;
+  }
+
+  &--card {
+    overflow: inherit;
+  }
+  @media only screen and (max-width: 500px){
+    &--card {
+      overflow : hidden;
+    }
+  }
+}

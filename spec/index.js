@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM,{render} from 'react-dom';
 import Root from './root';
-import Kmc409 from './kmc409';
-import {_Kmc416,_Kmc417, _Kmc418, _Kmc419, _Kmc420} from './task__kmc-416/index.js';
+import {_Kmc409_415} from './kmc409_415';
+import {_Kmc416,_Kmc417, _Kmc418, _Kmc419, _Kmc420, _Kmc421} from './task__kmc-416/index.js';
 import ContainerMain from './container-main/Container-main';
 
 const _doc = document.getElementById('toolbox-test');
@@ -12,7 +12,7 @@ spec: function(){
   ReactDOM.render(<Root />, document.getElementById('toolbox-test'));
 },
   kmc409: function () {
-    ReactDOM.render(<Kmc409 />, document.getElementById('toolbox-test'));
+    ReactDOM.render(<_Kmc409_415 />, document.getElementById('toolbox-test'));
   },
   kmc416 : function(){
     ReactDOM.render(<_Kmc416 />, document.getElementById('toolbox-test'));
@@ -28,6 +28,9 @@ spec: function(){
   },
   kmc420 : function(){
     ReactDOM.render(<_Kmc420 />, document.getElementById('toolbox-test'));
+  },
+  kmc421 : function(){
+    ReactDOM.render(<_Kmc421 />, document.getElementById('toolbox-test'));
   },
   container : function(){
     render(<ContainerMain />,_doc)

@@ -41,6 +41,9 @@ app.get('/kmc419', function (req, res) {
 app.get('/kmc420', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/task__kmc-420/index.html'));
 });
+app.get('/kmc421', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/task__kmc-421/index.html'));
+});
 app.get('/container', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/index.html'));
 });

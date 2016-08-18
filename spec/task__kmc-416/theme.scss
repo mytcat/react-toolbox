@@ -73,4 +73,31 @@ $default-REM : 1.8rem;
 
     }
   }
+
+//  421
+  &--card {
+    & >div > h5 {
+      font-size : $default-REM !important;
+      color : red;
+    }
+    &--title {
+      //flex-direction: column;
+      justify-content: center;
+    }
+
+  //  420
+    &--group {
+      &:last-child {
+        padding : 2rem 1.6rem 1.4rem;
+      }
+      flex : 1;
+
+      h5 {
+        font-size : $default-REM * 2;
+      }
+      p {
+        font-size : $default-REM;
+      }
+    }
+  }
 }
