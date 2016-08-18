@@ -21,7 +21,7 @@ class LeftSideBar extends Component {
     * */
     return (
       <div className={theme[CSS_LEFT_SIDE_BAR]}>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camera"/>
+        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camer"/>}/>
         <div className={theme[CSS_LEFT_SIDE_BAR_DIVIDER]}></div>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="launch" floating/>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="build" floating/>
