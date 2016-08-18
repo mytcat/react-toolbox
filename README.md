@@ -10,6 +10,13 @@ React Toolbox can be installed as an [npm package](https://www.npmjs.org/package
 
 ```bash
 $ npm install --save react-toolbox
+$ git clone https://github.com/mytcat/react-toolbox
+$ cd react-toolbox/
+$ npm install
+$ cd docs/
+$ npm install
+$ npm start
+$ open http://0.0.0.0:8080/kmc409
 ```
 
 ## Prerequisites
