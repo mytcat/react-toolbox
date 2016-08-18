@@ -1,0 +1,34 @@
+$chip-avatar-background : rgba(0, 0, 0, 0.12);
+$chip-avatar-background-light : rgba(255, 255, 255, .8);
+$chip-avatar-background-darken : rgba(0, 0, 0, 0.35);
+$chip-avatar-background-darken-darken : rgba(0, 0, 0, 0.75);
+$default-REM : 1.8rem;
+%divider {
+  margin-left : -$default-REM;
+  margin-right : -$default-REM;
+  margin-top : $default-REM;
+  height: 2px;
+}
+
+.leftSideBar{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding : 0 $default-REM;
+  left : 0;
+  top : $default-REM * 4;
+  bottom : 0;
+  width: $default-REM * 5;
+  background: $chip-avatar-background-darken-darken;
+
+  &--icon {
+    color : $chip-avatar-background-light;
+    font-size : $default-REM * 2;
+    margin-top : $default-REM * 2;
+    text-align: center;
+  }
+  &--divider {
+    @extend %divider;
+    background: $chip-avatar-background-light;
+  }
+}

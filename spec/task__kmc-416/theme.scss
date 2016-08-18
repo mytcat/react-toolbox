@@ -1,0 +1,76 @@
+$chip-avatar-background : rgba(0, 0, 0, 0.12);
+$chip-avatar-background-darken : rgba(0, 0, 0, 0.35);
+$chip-active : #ff3535;
+$transparent-background : transparent;
+$default-REM : 1.8rem;
+
+%flex {
+  display : flex;
+}
+%divider {
+  margin-left : -$default-REM;
+  margin-right : -$default-REM;
+  margin-top : $default-REM;
+  height: 2px;
+}
+.kmc416 {
+  margin-left : $default-REM * 7;
+  margin-right : $default-REM * 7;
+  &--divider {
+    @extend %divider;
+    background: $chip-avatar-background;
+  }
+  &_header {
+    @extend %flex;
+    flex-direction: row;
+    //justify-content: space-between;
+
+    &--chip {
+      background: $transparent-background;
+      width : calc(100% / 5);
+      display: inline-block;
+      position: relative;
+      vertical-align: middle;
+      margin-left : $default-REM/2;
+      &:first-child {
+        margin-left : 0;
+      }
+      &--line::after {
+        content : '';
+        display: inline-block;
+        width: 100%;
+        margin-left : $default-REM/2;
+        height: 2px;
+        background: $chip-avatar-background;
+        vertical-align: middle;
+      }
+
+
+      &--avatar {
+        background: $chip-avatar-background-darken;
+        font-size : $default-REM;
+        &--active {
+          background :$chip-active;
+        }
+      }
+    }
+
+
+  }
+
+  &_photoBUtton {
+
+    &--icon {
+      color: $chip-avatar-background-darken;
+      font-size: $default-REM * 2;
+      margin-top: -$default-REM + .2;
+    }
+  }
+
+  &_form {
+
+    &--input {
+
+    }
+  }
+}

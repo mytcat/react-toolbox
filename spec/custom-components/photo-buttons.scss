@@ -1,0 +1,26 @@
+$chip-avatar-background : rgba(0, 0, 0, 0.12);
+$chip-avatar-background-darken : rgba(0, 0, 0, 0.35);
+$chip-avatar-background-lighten : rgba(0, 0, 0, 0.05);
+$default-REM : 1.8rem;
+
+%photoButtonBorder {
+  border: 2px dashed $chip-avatar-background;
+  background: $chip-avatar-background-lighten;
+}
+.photoButton {
+  &--section {
+    margin : ($default-REM * 2) 0;
+  }
+  &--button {
+    display: flex;
+    margin: 0 auto;
+    padding: $default-REM*6;
+    @extend %photoButtonBorder;
+  }
+  &--icon {
+    color: $chip-avatar-background-darken;
+    font-size: $default-REM*2;
+    margin-top: -$default-REM;
+  }
+
+}

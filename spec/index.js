@@ -1,10 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM,{render} from 'react-dom';
 import Root from './root';
 import Kmc409 from './kmc409';
+import {_Kmc416} from './task__kmc-416/index.js';
+import ContainerMain from './container-main/Container-main';
 
-import Kmc416 from './kmc416.js';
-
+const _doc = document.getElementById('toolbox-test');
 window.app = {
 
 spec: function(){
@@ -14,6 +15,9 @@ spec: function(){
     ReactDOM.render(<Kmc409 />, document.getElementById('toolbox-test'));
   },
   kmc416 : function(){
-    ReactDOM.render(<Kmc416 />, document.getElementById('toolbox-test'));
+    ReactDOM.render(<_Kmc416 />, document.getElementById('toolbox-test'));
+  },
+  container : function(){
+    render(<ContainerMain />,_doc)
   }
 }
