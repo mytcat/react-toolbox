@@ -20,8 +20,11 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/index.html'));
 });
 
-app.get('/kmc409', function (req, res) {
-  res.sendFile(path.join(__dirname, './spec/kmc409.html'));
+app.get('/kmc409-415', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/kmc409_415.html'));
+});
+app.get('/ksi_logo', function (req, res) {
+  res.sendFile(path.join(__dirname, './static/img/svg/ksi_logo.svg'));
 });
 app.get('/kmc416', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/task__kmc-416/index.html'));

@@ -6,7 +6,8 @@ import Button, { IconButton } from '../components/button';
 import Dropdown from '../components/dropdown';
 import Input from '../components/input';
 import Card, { CardActions, CardMedia, CardText, CardTitle } from '../components/card';
-import {TopBar} from './custom-components/topbar';
+import {TopBar} from './custom-components/topbar.js';
+import {LeftSideBarBlue} from './left-side-bar/LeftSideBarBlue.js';
 import {PhotoButton} from './custom-components/PhotoButton.js';
 import style from './style';
 
@@ -24,7 +25,8 @@ const photoButton = {
 }
 
 const cardContainer = {
-  padding: '30px 80px'
+  padding: '30px 80px',
+  marginLeft: '90px'
 }
 
 const topFields = {
@@ -55,28 +57,6 @@ const cancelButton = {
 const finishButton = {
   color: '#2868C2'
 }
-
-const Kmc409 = () => (
-
-  <div>
-    <div style={cardContainer}>
-      <Card style={{width: '100%'}}>
-        <PhotoButton icon="photo_camera">
-        </PhotoButton>
-        <Dropdowns></Dropdowns>
-        <IdInput></IdInput>
-        <div style={cardButtons}>
-          <CardActions>
-            <Button label="cancel" style={cancelButton}/>
-            <Button label="finish" style={finishButton}/>
-          </CardActions>
-        </div>
-      </Card>
-    </div>
-
-
-  </div>
-);
 
 const hardware_types = [
   {label: "Mission Caster Hardware", value: "1"},
@@ -192,7 +172,30 @@ class IdInput extends React.Component {
   }
 }
 
+const Kmc409_415 = () => (
+
+  <div>
+    <TopBar></TopBar>
+    <LeftSideBarBlue></LeftSideBarBlue>
+    <div style={cardContainer}>
+      <Card style={{width: '100%'}}>
+        <PhotoButton icon="photo_camera">
+        </PhotoButton>
+        <Dropdowns></Dropdowns>
+        <IdInput></IdInput>
+        <div style={cardButtons}>
+          <CardActions>
+            <Button label="cancel" style={cancelButton}/>
+            <Button label="finish" style={finishButton}/>
+          </CardActions>
+        </div>
+      </Card>
+    </div>
+
+
+  </div>
+);
 
 
 
-export default Kmc409;
+export default Kmc409_415;
