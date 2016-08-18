@@ -6,7 +6,7 @@ import Button, { IconButton } from '../components/button';
 import Dropdown from '../components/dropdown';
 import Input from '../components/input';
 import Card, { CardActions, CardMedia, CardText, CardTitle } from '../components/card';
-import {TopBar} from './custom-components/topbar';
+import {TopBar} from './custom-components/topbar.js';
 import {LeftSideBarBlue} from './left-side-bar/LeftSideBarBlue.js';
 import {PhotoButton} from './custom-components/PhotoButton.js';
 import style from './style';
@@ -172,7 +172,7 @@ class IdInput extends React.Component {
   }
 }
 
-const Kmc409 = () => (
+const Kmc409_415 = () => (
 
   <div>
     <TopBar></TopBar>
@@ -198,4 +198,4 @@ const Kmc409 = () => (
 
 
 
-export default Kmc409;
+export default Kmc409_415;

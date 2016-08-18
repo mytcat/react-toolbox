@@ -15,7 +15,7 @@ $ cd docs/
 $ npm install
 $ npm start
 
-$ open http://0.0.0.0:8080/kmc409
+$ open http://0.0.0.0:8080/kmc409-415
 
 $ open http://0.0.0.0:8080/kmc416
 $ open http://0.0.0.0:8080/kmc417
