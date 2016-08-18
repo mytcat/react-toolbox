@@ -3,6 +3,9 @@ $chip-avatar-background-light : rgba(255, 255, 255, .8);
 $chip-avatar-background-darken : rgba(0, 0, 0, 0.35);
 $chip-avatar-background-darken-darken : rgba(0, 0, 0, 0.75);
 $default-REM : 1.8rem;
+$blue : #2AA7E3;
+$chip-background-blue : $blue;
+
 %divider {
   margin-left : -$default-REM;
   margin-right : -$default-REM;
@@ -20,18 +23,38 @@ $default-REM : 1.8rem;
   bottom : 0;
   width: $default-REM * 5;
   background: $chip-avatar-background-darken-darken;
-
   &--icon {
-    color : $chip-avatar-background-light !important;
+    color : $blue;
     font-size : $default-REM * 2;
     margin-top : $default-REM * 2;
     text-align: center;
-    background: transparent !important;
-    border-color: transparent;
-    box-shadow: 0 0 0 transparent;
   }
-  &--logo {
-    //background: url("../../static/img/Live4_logo_grey.png");
+  &--divider {
+    @extend %divider;
+    background: $chip-avatar-background-light;
+  }
+}
+
+.leftSideBarBlue {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding : 0 $default-REM;
+  left : 0;
+  top : 64px;
+  bottom : 0;
+  width: $default-REM * 5;
+  background: $blue;
+  &--ksi_logo_a {
+    padding-top: 20px;
+  }
+  &--icon {
+    color : $chip-avatar-background-light;
+    font-size : $default-REM * 2;
+    margin-top : $default-REM * 2;
+    text-align: center;
+    box-shadow: none;
+    background: $blue !important;
   }
   &--divider {
     @extend %divider;
