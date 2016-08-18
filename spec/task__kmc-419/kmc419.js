@@ -6,102 +6,64 @@ import {Chip} from '../../components/chip';
 import {Avatar} from '../../components/avatar';
 import {Input} from '../../components/input';
 import {Table} from '../../components/table';
-
-
-// import constants
-import {
-  HEADER_MAIN_INFORMATION,
-  HEADER_ACCOUNT_INFORMATION,
-  HEADER_ORGANIZATION_ADMINS,
-  HEADER_HARDWARE,
-  HEADER_SUMMARY,
-  BUTTON_CANCEL,
-  BUTTON_NEXT
-} from '../task__kmc-416/constants';
-
-import {
-  CSS_HEADER_CHIP_SECTION,
-  CSS_HEADER_CHIP,
-  CSS_HEADER_CHIP_AVATAR,
-  CSS_HEADER_CHIP_AVATAR_ACTIVE,
-  CSS_HEADER_CHIP_LINE
-} from '../task__kmc-416/constants';
 import style from '../style';
-import {BUTTON_BACK} from '../task__kmc-416/constants';
+import {NavigationSection} from '../custom-components/NavigationSection';
+import {
+  BUTTON_CANCEL,
+  BUTTON_NEXT,
+  BUTTON_BACK,
+  CSS_CLASS_DIVIDER,
+  TASK_KMC_ID
+} from '../task__kmc-416/constants';
 
+const TestDataForTable = {
+  tableModel: {
+    'Model Number': {type: String},
+    'Hardware Type': {type: String},
+    'Manufacturer': {type: String},
+    'Hardware ID': {type: Number}
+  },
+  testHardware: [
+    {
+      'Model Number': 'Number 123',
+      'Hardware Type': 'Type 123',
+      'Manufacturer': 'Man 123',
+      'Hardware ID': 123123
+    },
+    {
+      'Model Number': 'Number 123',
+      'Hardware Type': 'Type 123',
+      'Manufacturer': 'Man 123',
+      'Hardware ID': 123123
+    },
+    {
+      'Model Number': 'Number 123',
+      'Hardware Type': 'Type 123',
+      'Manufacturer': 'Man 123',
+      'Hardware ID': 123123
+    }
+  ]
+};
 
 class Kmc419 extends Component {
 
   render() {
-    const TableModel = {
-      'Model Number': {type: String},
-      'Hardware Type': {type: String},
-      'Manufacturer': {type: String},
-      'Hardware ID': {type: Number}
-    };
-    const TestHardware = [
-      {
-        'Model Number': 'Number 123',
-        'Hardware Type': 'Type 123',
-        'Manufacturer': 'Man 123',
-        'Hardware ID': 123123
-      },
-      {
-        'Model Number': 'Number 123',
-        'Hardware Type': 'Type 123',
-        'Manufacturer': 'Man 123',
-        'Hardware ID': 123123
-      },
-      {
-        'Model Number': 'Number 123',
-        'Hardware Type': 'Type 123',
-        'Manufacturer': 'Man 123',
-        'Hardware ID': 123123
-      }
-    ];
-    const activeAvatar = `${this.props.theme[CSS_HEADER_CHIP_AVATAR]} ${this.props.theme[CSS_HEADER_CHIP_AVATAR_ACTIVE]}`;
     return (
       <div className={style.app}>
-        <section className={this.props.theme['kmc416']}>
+        <section className={this.props.theme[TASK_KMC_ID]}>
           {/*   Header    */}
-          <div className={this.props.theme[CSS_HEADER_CHIP_SECTION]}>
-            <Chip className={this.props.theme[CSS_HEADER_CHIP]}>
-              <Avatar className={activeAvatar} icon="done">
-                </Avatar>
-              <span className={this.props.theme[CSS_HEADER_CHIP_LINE]}>{HEADER_MAIN_INFORMATION}</span>
-            </Chip>
+          <NavigationSection currentIndex={4}/>
 
-            <Chip className={this.props.theme[CSS_HEADER_CHIP]}>
-              <Avatar className={activeAvatar} icon="done"></Avatar>
-              <span className={this.props.theme[CSS_HEADER_CHIP_LINE]}>{HEADER_ACCOUNT_INFORMATION}</span>
-            </Chip>
-
-            <Chip className={this.props.theme[CSS_HEADER_CHIP]}>
-              <Avatar className={activeAvatar} icon="done"></Avatar>
-              <span className={this.props.theme[CSS_HEADER_CHIP_LINE]}>{HEADER_ORGANIZATION_ADMINS}</span>
-            </Chip>
-
-            <Chip className={this.props.theme[CSS_HEADER_CHIP]}>
-              <Avatar className={activeAvatar}>4</Avatar>
-              <span className={this.props.theme[CSS_HEADER_CHIP_LINE]}>{HEADER_HARDWARE}</span>
-            </Chip>
-
-            <Chip className={this.props.theme[CSS_HEADER_CHIP]}>
-              <Avatar className={this.props.theme[CSS_HEADER_CHIP_AVATAR]}>5</Avatar>
-              <span>{HEADER_SUMMARY}</span>
-            </Chip>
-          </div>
-
-          <div className={this.props.theme['kmc416--divider']}></div>
+          <div className={this.props.theme[CSS_CLASS_DIVIDER]}></div>
           {/*   Table section*/}
           <div>
             <Input type="text" label="search" icon="search" />
           </div>
           <Table
-            model={TableModel}
+            model={TestDataForTable.tableModel}
             selectable
             multiSelectable
-            source={TestHardware}
+            source={TestDataForTable.testHardware}
           />
           {/*   Navigation buttons*/}
           <div style={{overflow: 'hidden'}}>
