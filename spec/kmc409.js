@@ -59,7 +59,6 @@ const finishButton = {
 const Kmc409 = () => (
 
   <div>
-    <TopBar></TopBar>
     <div style={cardContainer}>
       <Card style={{width: '100%'}}>
         <PhotoButton icon="photo_camera">

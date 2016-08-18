@@ -21,20 +21,13 @@ class LeftSideBar extends Component {
     * */
     return (
       <div className={theme[CSS_LEFT_SIDE_BAR]}>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camer"/>}/>
+        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camera"/>}/>
         <div className={theme[CSS_LEFT_SIDE_BAR_DIVIDER]}></div>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="launch" floating/>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="build" floating/>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="track_changes" floating/>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="settings" floating/>
         <Button className={theme[CSS_LEFT_SIDE_BAR_ICON]} icon="help" floating/>
-        {/*<FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="photo_camera"/>*/}
-
-        {/*<FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="launch"/>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="build"/>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="track_changes"/>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="settings"/>
-        <FontIcon className={theme[CSS_LEFT_SIDE_BAR_ICON]} value="help"/>*/}
       </div>
     )
   }
