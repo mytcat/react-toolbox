@@ -1,7 +1,6 @@
 /* global VERSION */
 import '../components/commons.scss';
 import React from 'react';
-import AppBar from '../components/identifiers.js';
 import Button, { IconButton } from '../components/button';
 import Dropdown from '../components/dropdown';
 import Input from '../components/input';
