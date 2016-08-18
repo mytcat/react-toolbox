@@ -6,8 +6,8 @@ import Button, { IconButton } from '../components/button';
 import Dropdown from '../components/dropdown';
 import Input from '../components/input';
 import Card, { CardActions, CardMedia, CardText, CardTitle } from '../components/card';
-import TopBar from './components/topbar';
-
+import {TopBar} from './custom-components/topbar';
+import {PhotoButton} from './custom-components/PhotoButton.js';
 import style from './style';
 
 const photoButtonContainer = {
@@ -62,9 +62,8 @@ const Kmc409 = () => (
     <TopBar></TopBar>
     <div style={cardContainer}>
       <Card style={{width: '100%'}}>
-        <div style={photoButtonContainer}>
-          <Button icon="photo_camera" medium style={photoButton}></Button>
-        </div>
+        <PhotoButton icon="photo_camera">
+        </PhotoButton>
         <Dropdowns></Dropdowns>
         <IdInput></IdInput>
         <div style={cardButtons}>
@@ -86,9 +85,9 @@ const hardware_types = [
 ];
 
 const hardware_model = [
-  {label: "MC4200"},
-  {label: "MC5100"},
-  {label: "Add another..."}
+  {label: "MC4200", value: "1"},
+  {label: "MC5100", value: "2"},
+  {label: "Add another...", value:"3"}
 ]
 
 const manufacturers = [
@@ -99,8 +98,13 @@ const manufacturers = [
 
 class Dropdowns extends React.Component {
   state = {
-    selected: 0
+    selected: 0,
+    dd3: 0
   };
+
+  dropDown3Changed (value){
+    this.setState({dd3: value});
+  }
 
   handleChange (dropdown, value) {
     const newState = {};
@@ -119,7 +123,6 @@ class Dropdowns extends React.Component {
         <img className={style.customImg} src={data.img} />
         <div className={style.dropdownTemplateContent}>
           <span>{data.label}</span>
-          <small>{data.value}</small>
         </div>
       </div>
     );
@@ -133,10 +136,10 @@ class Dropdowns extends React.Component {
             <Dropdown
               label="Hardware type"
               ref="dropdown1"
-              onChange={this.handleChange.bind(this, 'dropdown1')}
+              onChange={this.handleChange}
               source={hardware_types}
               template={this.customDropdownItem}
-              value={this.state.dropdown1}
+              value={this.state.selected}
             />
           </div>
           <div style={fieldStyle}>
@@ -146,7 +149,7 @@ class Dropdowns extends React.Component {
               onChange={this.handleChange.bind(this, 'dropdown2')}
               source={manufacturers}
               template={this.customDropdownItem}
-              value={this.state.dropdown1}
+              value={this.state.dropdown2}
             />
           </div>
         </div>
@@ -155,10 +158,10 @@ class Dropdowns extends React.Component {
                 <Dropdown
                   label="Hardware model"
                   ref="dropdown1"
-                  onChange={this.handleChange.bind(this, 'dropdown3')}
+                  onChange={this.dropDown3Changed.bind(this)}
                   source={hardware_model}
                   template={this.customDropdownItem}
-                  value={this.state.dropdown1}
+                  value={this.state.dd3}
                 />
             </div>
             <div style={fieldStyle}>
