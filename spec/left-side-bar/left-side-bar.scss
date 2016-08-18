@@ -4,7 +4,7 @@ $chip-avatar-background-darken : rgba(0, 0, 0, 0.35);
 $chip-avatar-background-darken-darken : rgba(0, 0, 0, 0.75);
 $default-REM : 1.8rem;
 $blue : #2AA7E3;
-$chip-background-blue : $blue;
+$icon-color : #FFFFFF;
 
 %divider {
   margin-left : -$default-REM;
@@ -49,7 +49,7 @@ $chip-background-blue : $blue;
     padding-top: 20px;
   }
   &--icon {
-    color : $chip-avatar-background-light;
+    color : $icon-color !important;
     font-size : $default-REM * 2;
     margin-top : $default-REM * 2;
     text-align: center;
