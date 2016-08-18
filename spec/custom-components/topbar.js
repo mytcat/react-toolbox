@@ -3,6 +3,8 @@ import React from 'react';
 import AppBar from '../../components/app_bar/'
 import FontIcon from '../../components/font_icon/'
 import {IconMenu, MenuItem, MenuDivider } from '../../../react-toolbox/lib/menu';
+import {themr} from 'react-css-themr';
+import topbar from './topbar.css';
 
 const arrow = {
   cursor: 'pointer'
@@ -18,10 +20,11 @@ const userAvatar = {
   cursor: 'pointer'
 }
 
-const TopBar = ()=>{
+const TopBar = ({theme})=>{
+
   return (
       <div>
-          <AppBar>
+          <AppBar className={theme.topbar}>
             <span style={arrow}>
               <FontIcon value="arrow_back"></FontIcon>
             </span>
@@ -44,4 +47,7 @@ const TopBar = ()=>{
   );
 };
 
-export default TopBar;
+const applyTheme = (Comp) => themr('topbar', topbar)(Comp);
+const ThemedTopBar = applyTheme(TopBar);
+
+export {ThemedTopBar as TopBar};
