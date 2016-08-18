@@ -2,8 +2,7 @@
 import '../../components/commons.scss';
 import React, {Component, PropTypes} from 'react';
 import Button from '../../components/button';
-import {Input} from '../../components/input';
-import {CardTitle} from '../../components/card';
+import {Card,CardMedia,CardText,CardTitle} from '../../components/card';
 import {NavigationSection} from '../custom-components/NavigationSection';
 import style from '../style';
 // import constants
@@ -19,7 +18,7 @@ import {
 } from '../task__kmc-416/constants';
 
 
-class Kmc420 extends Component {
+class Kmc421 extends Component {
 
   render() {
     return (
