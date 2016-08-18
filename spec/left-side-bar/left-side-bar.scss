@@ -22,10 +22,13 @@ $default-REM : 1.8rem;
   background: $chip-avatar-background-darken-darken;
 
   &--icon {
-    color : $chip-avatar-background-light;
+    color : $chip-avatar-background-light !important;
     font-size : $default-REM * 2;
     margin-top : $default-REM * 2;
     text-align: center;
+    background: transparent !important;
+    border-color: transparent;
+    box-shadow: 0 0 0 transparent;
   }
   &--divider {
     @extend %divider;
