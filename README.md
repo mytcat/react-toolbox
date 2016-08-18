@@ -6,8 +6,6 @@ React Toolbox is a set of [React](http://facebook.github.io/react/) components t
 
 ## Installation
 
-React Toolbox can be installed as an [npm package](https://www.npmjs.org/package/react-toolbox):
-
 ```bash
 $ npm install --save react-toolbox
 $ git clone https://github.com/mytcat/react-toolbox
@@ -16,7 +14,10 @@ $ npm install
 $ cd docs/
 $ npm install
 $ npm start
+<<<<<<< HEAD
 $ open http://0.0.0.0:8080/kmc#
+$ open http://0.0.0.0:8080/kmc409
+
 $ open http://0.0.0.0:8080/kmc416
 $ open http://0.0.0.0:8080/kmc417
 $ open http://0.0.0.0:8080/kmc418
