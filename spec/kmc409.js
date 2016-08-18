@@ -80,8 +80,8 @@ const Kmc409 = () => (
 );
 
 const hardware_types = [
-  {label: "Mission Caster Hardware"},
-  {label: "Platform Hardware"}
+  {label: "Mission Caster Hardware", value: "1"},
+  {label: "Platform Hardware", value: "2"}
 ];
 
 const hardware_model = [
@@ -91,17 +91,25 @@ const hardware_model = [
 ]
 
 const manufacturers = [
-  {label: "KSI Data Sciences"},
-  {label: "Another_hardware_manufacturer"},
-  {label: "Add another..."}
+  {label: "KSI Data Sciences", value: "1"},
+  {label: "Another_hardware_manufacturer", value: "2"},
+  {label: "Add another...", value: "3"}
 ]
 
 class Dropdowns extends React.Component {
   state = {
     selected: 0,
+    dd1: 0,
+    dd2: 0,
     dd3: 0
   };
 
+  dropDown1Changed (value){
+    this.setState({dd1: value});
+  }
+  dropDown2Changed (value){
+    this.setState({dd2: value});
+  }
   dropDown3Changed (value){
     this.setState({dd3: value});
   }
@@ -135,21 +143,21 @@ class Dropdowns extends React.Component {
           <div style={fieldStyle}>
             <Dropdown
               label="Hardware type"
-              ref="dropdown1"
-              onChange={this.handleChange}
+              ref="dd1"
+              onChange={this.dropDown1Changed.bind(this)}
               source={hardware_types}
               template={this.customDropdownItem}
-              value={this.state.selected}
+              value={this.state.dd1}
             />
           </div>
           <div style={fieldStyle}>
             <Dropdown
               label="Manufacturer"
-              ref="dropdown1"
-              onChange={this.handleChange.bind(this, 'dropdown2')}
+              ref="dd2"
+              onChange={this.dropDown2Changed.bind(this)}
               source={manufacturers}
               template={this.customDropdownItem}
-              value={this.state.dropdown2}
+              value={this.state.dd2}
             />
           </div>
         </div>
@@ -157,7 +165,7 @@ class Dropdowns extends React.Component {
             <div style={fieldStyle}>
                 <Dropdown
                   label="Hardware model"
-                  ref="dropdown1"
+                  ref="dd3"
                   onChange={this.dropDown3Changed.bind(this)}
                   source={hardware_model}
                   template={this.customDropdownItem}
