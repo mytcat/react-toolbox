@@ -139,6 +139,8 @@ class Dropdowns extends React.Component {
               source={manufacturers}
               template={this.customDropdownItem}
               value={this.state.dd2}
+              allowBlank={false}
+              error='Please choose manufacturer'
             />
           </div>
         </div>
