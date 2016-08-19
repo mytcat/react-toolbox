@@ -3,7 +3,6 @@ import {LeftSideBar} from '../left-side-bar/LeftSideBar';
 import {TopBar} from '../custom-components/topbar.js';
 import {_Kmc416, _Kmc417, _Kmc418 , _Kmc419, _Kmc420, _Kmc421} from '../task__kmc-416/index';
 import {
-  CSS_LEFT_SIDE_BAR,
   CSS_LEFT_SIDE_BAR_COLOR_BLUE
 } from '../left-side-bar/constants';
 import {TASK_KMC_ID} from '../task__kmc-416/constants';
@@ -11,15 +10,12 @@ import {themr} from 'react-css-themr';
 import theme from '../task__kmc-416/theme.scss';
 import {
   CSS_CLASS_DIVIDER,
-  HEADER_MAIN_INFORMATION,
-  HEADER_ACCOUNT_INFORMATION,
-  HEADER_ORGANIZATION_ADMINS,
-  HEADER_HARDWARE,
-  HEADER_SUMMARY
 } from '../task__kmc-416/constants';
 import {NavigationSection} from '../custom-components/NavigationSection';
 import Card from '../../components/card';
 import style from '../style';
+import {ProfileUsersContainer} from '../profile-users/profileUsers';
+
 
 class ContainerMain extends Component {
   constructor(props){
@@ -46,7 +42,7 @@ class ContainerMain extends Component {
             <NavigationSection currentIndex={this.state.currentIndex}/>
             <div className={this.props.theme[CSS_CLASS_DIVIDER]}></div>
             {this.switchView(this.state.currentIndex)}
-          </Card>
+            </Card>
         </div>
       )
     } else {

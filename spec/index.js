@@ -5,6 +5,8 @@ import {_Kmc409_415} from './kmc409_415';
 import {_Kmc416,_Kmc417, _Kmc418, _Kmc419, _Kmc420, _Kmc421} from './task__kmc-416/index.js';
 import {ContainerMain} from './container-main/Container-main';
 import {ProfileUsersContainer} from './profile-users/profileUsers';
+import {ContainerMainUserProfile} from './container-main/Container-main-usersProfile';
+
 
 const _doc = document.getElementById('toolbox-test');
 window.app = {
@@ -38,5 +40,8 @@ spec: function(){
   },
   container : function(){
     render(<ContainerMain />,_doc)
+  },
+  containerUserProfile : function(){
+    render(<ContainerMainUserProfile />, _doc)
   }
 }
