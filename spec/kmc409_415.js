@@ -6,12 +6,13 @@ import Dropdown from '../components/dropdown';
 import Input from '../components/input';
 import Card, { CardActions, CardMedia, CardText, CardTitle } from '../components/card';
 import {TopBar} from './custom-components/topbar.js';
-import {LeftSideBarBlue} from './left-side-bar/LeftSideBarBlue.js';
+import {LeftSideBar} from './left-side-bar/LeftSideBar';
 import {PhotoButton} from './custom-components/PhotoButton.js';
 import style from './style';
 
 import {themr} from 'react-css-themr';
 import customDropDown from './customDropDown.scss';
+import {CSS_LEFT_SIDE_BAR_COLOR_BLUE} from './left-side-bar/constants';
 
 const photoButtonContainer = {
   alignSelf: 'center',
@@ -181,7 +182,7 @@ const Kmc409_415 = ({theme}) => {
   return (
    <div>
     <TopBar></TopBar>
-    <LeftSideBarBlue></LeftSideBarBlue>
+    <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}></LeftSideBar>
     <div style={cardContainer}>
       <Card  className={theme['customDropDown--card']} style={{width: '100%'}}>
         <PhotoButton icon="photo_camera">
