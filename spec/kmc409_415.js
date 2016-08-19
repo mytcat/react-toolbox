@@ -82,7 +82,7 @@ class Dropdowns extends React.Component {
   state = {
     selected: 0,
     dd1: 0,
-    dd2: 0,
+    dd2: manufacturers[0].value,
     dd3: 0
   };
 
@@ -140,8 +140,6 @@ class Dropdowns extends React.Component {
               source={manufacturers}
               template={this.customDropdownItem}
               value={this.state.dd2}
-              // allowBlank={false}
-              // error='Please choose manufacturer'
             />
           </div>
         </div>

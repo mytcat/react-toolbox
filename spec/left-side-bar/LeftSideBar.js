@@ -12,7 +12,7 @@ import {
   CSS_LEFT_SIDE_BAR,
   ICON_LAUNCH,
   ICON_BUILD,
-  ICON_TRACK_CHANGES,
+  ICON_MY_LOCATION,
   ICON_SETTINGS,
   ICON_HELP,
   LOGO_SRC
@@ -29,7 +29,7 @@ class LeftSideBar extends Component {
         <div className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_DIVIDER]}></div>
         <Button className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_ICON]} icon={ICON_LAUNCH} floating/>
         <Button className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_ICON]} icon={ICON_BUILD} floating/>
-        <Button className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_ICON]} icon={ICON_TRACK_CHANGES} floating/>
+        <Button className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_ICON]} icon={ICON_MY_LOCATION} floating/>
         <Button className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_ICON]} icon={ICON_SETTINGS} floating/>
         <Button className={theme[leftSideBarColor+CSS_LEFT_SIDE_BAR_ICON]} icon={ICON_HELP} floating/>
       </div>
