@@ -24,4 +24,7 @@ $default-REM : 1.8rem;
     width : 50%;
     float : left;
   }
+  &--input {
+    @extend .profileUsers--card_title
+  }
 }
