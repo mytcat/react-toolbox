@@ -50,4 +50,6 @@ export const CSS_CLASS_DIVIDER = `${TASK_KMC_ID}--divider`;
 export const CSS_CARD_TITLE = `${TASK_KMC_ID}--card--title`;
 export const CSS_CARD_GROUP = `${TASK_KMC_ID}--card--group`;
 export const CSS_CLASS_CARD = `${TASK_KMC_ID}--card`;
+export const CSS_CLASS_CARD_MEDIA_LOGO = `${TASK_KMC_ID}--card--media--logo`;
+export const CSS_CLASS_CARD_MEDIA_ORGANIZATION_LOGO = `${TASK_KMC_ID}--card--media--logo_org`;
 

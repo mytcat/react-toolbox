@@ -3,7 +3,7 @@ import '../../components/commons.scss';
 import React, {Component, PropTypes} from 'react';
 import Button from '../../components/button';
 import {Input} from '../../components/input';
-import {Card,CardTitle} from '../../components/card';
+import {Card,CardTitle,CardMedia} from '../../components/card';
 import {NavigationSection} from '../custom-components/NavigationSection';
 import style from '../style';
 // import constants
@@ -16,8 +16,7 @@ import {
   BUTTON_CANCEL,
   BUTTON_NEXT,
   BUTTON_BACK,
-  TASK_KMC_ID,
-  CSS_CLASS_DIVIDER,
+  CSS_CLASS_CARD_MEDIA_LOGO,
   CSS_CARD_GROUP,
   CSS_CLASS_CARD
 } from '../task__kmc-416/constants';
@@ -29,6 +28,9 @@ class Kmc420 extends Component {
     let {parentHandler, index, theme} = this.props;
     return (
       <div>
+        <CardMedia >
+          <img className={theme[CSS_CLASS_CARD_MEDIA_LOGO]} src="https://dl.dropboxusercontent.com/u/53778939/LOGO.svg"/>
+        </CardMedia>
         {/*   Cards info section*/}
         <CardTitle className={theme[CSS_CLASS_CARD]} title={HEADER_MAIN_INFORMATION}/>
         <section style={{display: 'flex'}}>

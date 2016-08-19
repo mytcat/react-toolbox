@@ -23,9 +23,6 @@ app.get('/', function (req, res) {
 app.get('/kmc409-415', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/kmc409_415.html'));
 });
-app.get('/ksi_logo', function (req, res) {
-  res.sendFile(path.join(__dirname, './static/img/svg/ksi_logo.svg'));
-});
 app.get('/kmc416', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/task__kmc-416/index.html'));
 });
@@ -51,6 +48,16 @@ app.get('/profileUsers', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/profile-users/index.html'));
 });
 
+/* logo */
+app.get('/ksi_logo', function (req, res) {
+  res.sendFile(path.join(__dirname, './static/img/svg/ksi_logo.svg'));
+});
+app.get('/org_logo', function (req, res) {
+  res.sendFile(path.join(__dirname, './static/img/Org_icon_congr_1.png'));
+});
+app.get('/user_logo', function (req, res) {
+  res.sendFile(path.join(__dirname, './static/img/user_icon_congr.png'));
+});
 
 
 

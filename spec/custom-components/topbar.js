@@ -7,7 +7,7 @@ import {themr} from 'react-css-themr';
 import topBar from './topbar.scss';
 
 const TOP_BAR_CSS = 'topBar';
-const USER_LOGO = 'https://dl.dropboxusercontent.com/u/53778939/User%20avatar.png';
+export const USER_LOGO = 'https://dl.dropboxusercontent.com/u/53778939/User%20avatar.png';
 
 const arrow = {
   cursor: 'pointer'
