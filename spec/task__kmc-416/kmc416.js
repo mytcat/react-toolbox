@@ -3,6 +3,7 @@ import '../../components/commons.scss';
 import React, {Component, PropTypes} from 'react';
 import Button from '../../components/button';
 import {Chip} from '../../components/chip';
+import {Card} from '../../components/card';
 import {Avatar} from '../../components/avatar';
 import {Input} from '../../components/input';
 import {NavigationSection} from '../custom-components/NavigationSection';
@@ -58,12 +59,11 @@ class Kmc416 extends Component{
     )
   }
   render(){
+    let {parentHandler, index} = this.props;
     return (
-      <div className={style.app}>
-        <section className={this.props.theme[TASK_KMC_ID]}>
+     <div>
           {/*   Header    */}
-          <NavigationSection currentIndex={1}/>
-          <div className={this.props.theme[CSS_CLASS_DIVIDER]}></div>
+
           {/*   Photo section*/}
           <PhotoButton icon={ICON_PHOTO_CAMERA}/>
           {/*   Form section*/}
@@ -84,10 +84,9 @@ class Kmc416 extends Component{
           {/*   Navigation buttons*/}
           <div style={styleForNavigationButtonsWrapper}>
             {this.renderButton({label : BUTTON_CANCEL, flat: true, disabled: true})}
-            {this.renderButton({label : BUTTON_NEXT, flat: true, primary: true})}
+            {this.renderButton({label : BUTTON_NEXT, flat: true, primary: true, onClick: (e)=>parentHandler(++index)})}
           </div>
-        </section>
-      </div>
+     </div>
     )
   }
 }

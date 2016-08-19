@@ -31,47 +31,72 @@ const TestDataForTable = {
       'Hardware ID': 123123
     },
     {
-      'Model Number': 'Number 123',
-      'Hardware Type': 'Type 123',
-      'Manufacturer': 'Man 123',
-      'Hardware ID': 123123
+      'Model Number': 'Number 333',
+      'Hardware Type': 'Type 333',
+      'Manufacturer': 'Man 333',
+      'Hardware ID': 33333
     },
     {
-      'Model Number': 'Number 123',
-      'Hardware Type': 'Type 123',
-      'Manufacturer': 'Man 123',
-      'Hardware ID': 123123
+      'Model Number': 'Number 666',
+      'Hardware Type': 'Type 666',
+      'Manufacturer': 'Man 666',
+      'Hardware ID': 6666
     }
   ]
 };
 
 class Kmc419 extends Component {
-
+  constructor(props){
+    super(props);
+    this.state = {
+      data : TestDataForTable.testHardware,
+      selected : []
+    }
+  }
+handleFilterData(str){
+    let _reg = new RegExp(str, 'g','i');
+    let newData = TestDataForTable.testHardware.filter(el=>{
+      for(let key in el){
+        if(el.hasOwnProperty(key) && _reg.test(el[key])){
+          return el;
+        }
+      }
+    });
+    this.setState({
+      data : newData
+    });
+  }
+  handleOnSelect(selected){
+    this.setState({
+      selected
+    })
+  }
   render() {
+    let {parentHandler, index, theme} = this.props;
     return (
-      <div className={style.app}>
-        <section className={this.props.theme[TASK_KMC_ID]}>
-          {/*   Header    */}
-          <NavigationSection currentIndex={4}/>
-
-          <div className={this.props.theme[CSS_CLASS_DIVIDER]}></div>
-          {/*   Table section*/}
-          <div>
-            <Input type="text" label="search" icon="search" />
-          </div>
-          <Table
-            model={TestDataForTable.tableModel}
-            selectable
-            multiSelectable
-            source={TestDataForTable.testHardware}
-          />
-          {/*   Navigation buttons*/}
-          <div style={{overflow: 'hidden'}}>
-            <Button label={BUTTON_BACK} flat style={{float: 'left'}}/>
-            <Button label={BUTTON_CANCEL} flat style={{float: 'right'}}/>
-            <Button label={BUTTON_NEXT} flat primary style={{float: 'right'}}/>
-          </div>
-        </section>
+      <div>
+        {/*   Table section*/}
+        <div>
+          <Input type="text" label="search" icon="search" onChange={this.handleFilterData.bind(this)}/>
+        </div>
+        <Table
+          model={TestDataForTable.tableModel}
+          selectable
+          multiSelectable
+          source={this.state.data}
+          selected={this.state.selected}
+          onSelect={this.handleOnSelect.bind(this)}
+        />
+        {/*   Navigation buttons*/}
+        <div style={{overflow: 'hidden'}}>
+          <Button label={BUTTON_BACK} flat style={{float: 'left'}} onClick={(e)=> {
+            parentHandler(--index)
+          }}/>
+          <Button label={BUTTON_CANCEL} flat style={{float: 'right'}}/>
+          <Button label={BUTTON_NEXT} flat primary style={{float: 'right'}} onClick={(e)=> {
+            parentHandler(++index)
+          }}/>
+        </div>
       </div>
     )
   }

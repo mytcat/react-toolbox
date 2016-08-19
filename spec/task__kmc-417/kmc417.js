@@ -32,13 +32,9 @@ const styleForFormBlock = {
 class Kmc417 extends Component{
 
   render(){
+    let {parentHandler, index} = this.props;
     return (
-      <div className={style.app}>
-        <section className={this.props.theme[TASK_KMC_ID]}>
-          {/*   Header    */}
-          <NavigationSection currentIndex={2}/>
-
-          <div className={this.props.theme[CSS_CLASS_DIVIDER]}></div>
+        <div>
           {/*   Form section*/}
           <div style={styleForFormBlock}>
             <div style={{flex : `0 45%`}}>
@@ -58,12 +54,11 @@ class Kmc417 extends Component{
           </div>
           {/*   Navigation buttons*/}
           <div style={{overflow: 'hidden'}}>
-            <Button label={BUTTON_BACK} flat style={{float: 'left'}}/>
+            <Button label={BUTTON_BACK} flat style={{float: 'left'}} onClick={(e)=>{parentHandler(--index)}} />
             <Button label={BUTTON_CANCEL} flat style={{float: 'right'}}/>
-            <Button label={BUTTON_NEXT} flat primary style={{float: 'right'}}/>
+            <Button label={BUTTON_NEXT} flat primary style={{float: 'right'}} onClick={(e)=>{parentHandler(++index)}}/>
           </div>
-        </section>
-      </div>
+        </div>
     )
   }
 }

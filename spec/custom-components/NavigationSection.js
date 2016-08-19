@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Chip} from '../../components/chip';
 import {Avatar} from '../../components/avatar';
 import {
+  TASK_KMC_ID,
   HEADER_MAIN_INFORMATION,
   HEADER_ACCOUNT_INFORMATION,
   HEADER_ORGANIZATION_ADMINS,
@@ -19,18 +20,19 @@ import theme from '../task__kmc-416/theme.scss';
 class NavigationSection extends Component {
   renderNavigationChip(chip = {}) {
     let {theme, currentIndex} = this.props;
-    let getAvatarClass = (index) => {
+    let getAvatarClass = (index, defaultClass, activeClass) => {
       if (index <= currentIndex) {
-        return theme[CSS_HEADER_CHIP_AVATAR] + ' ' +theme[CSS_HEADER_CHIP_AVATAR_ACTIVE];
+        return theme[defaultClass] + ' ' +theme[activeClass];
       }
       else {
-        return theme[CSS_HEADER_CHIP_AVATAR];
+        return theme[defaultClass];
       }
     };
     let getAvatarIcon = chip.index+1 < currentIndex ? 'done' : '';
     return (
       <Chip key={chip.index} className={theme[CSS_HEADER_CHIP]}>
-        <Avatar className={getAvatarClass(chip.index+1)} icon={getAvatarIcon}>{!getAvatarIcon && (chip.index + 1)}</Avatar>
+        <Avatar className={getAvatarClass((chip.index+1), CSS_HEADER_CHIP_AVATAR,CSS_HEADER_CHIP_AVATAR_ACTIVE)}
+                icon={getAvatarIcon}>{!getAvatarIcon && (chip.index + 1)}</Avatar>
         <span className={(chip.index + 1) != 5 && theme[CSS_HEADER_CHIP_LINE]}>{chip.header}</span>
       </Chip>
     )
@@ -48,6 +50,6 @@ class NavigationSection extends Component {
     )
   }
 }
-const applyTheme = (Com) => themr('kmc', theme)(Com);
+const applyTheme = (Com) => themr(TASK_KMC_ID, theme)(Com);
 const ThemedNavigationSection = applyTheme(NavigationSection);
 export {ThemedNavigationSection as NavigationSection};
