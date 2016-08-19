@@ -7,12 +7,12 @@ React Toolbox is a set of [React](http://facebook.github.io/react/) components t
 ## Installation
 
 ```bash
-$ npm install --save react-toolbox
 $ git clone https://github.com/mytcat/react-toolbox
 $ cd react-toolbox/
 $ npm install
 $ cd docs/
 $ npm install
+$ cd ../
 $ npm start
 
 $ open http://0.0.0.0:8080/kmc409-415
