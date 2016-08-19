@@ -8,7 +8,7 @@ export const CSS_LEFT_SIDE_BAR = 'leftSideBar';
 // icons
 export const ICON_LAUNCH = 'launch';
 export const ICON_BUILD = 'build';
-export const ICON_TRACK_CHANGES = 'track_changes';
+export const ICON_MY_LOCATION = 'my_location';
 export const ICON_SETTINGS = 'settings';
 export const ICON_HELP = 'help';
 // logo
