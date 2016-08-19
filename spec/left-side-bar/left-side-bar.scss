@@ -19,15 +19,20 @@ $icon-color : #FFFFFF;
   flex-direction: column;
   padding : 0 $default-REM;
   left : 0;
-  top : $default-REM * 4;
+  top : 64px;
   bottom : 0;
   width: $default-REM * 5;
   background: $chip-avatar-background-darken-darken;
+  &--ksi_logo_a {
+    padding-top: 20px;
+  }
   &--icon {
-    color : $blue;
+    color : $chip-avatar-background-light !important;
     font-size : $default-REM * 2;
     margin-top : $default-REM * 2;
     text-align: center;
+    box-shadow: none;
+    background: transparent !important;
   }
   &--divider {
     @extend %divider;
@@ -36,28 +41,17 @@ $icon-color : #FFFFFF;
 }
 
 .leftSideBarBlue {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  padding : 0 $default-REM;
-  left : 0;
-  top : 64px;
-  bottom : 0;
-  width: $default-REM * 5;
+  @extend .leftSideBar;
   background: $blue;
   &--ksi_logo_a {
-    padding-top: 20px;
+    @extend .leftSideBar--ksi_logo_a;
   }
   &--icon {
+    @extend .leftSideBar--icon;
     color : $icon-color !important;
-    font-size : $default-REM * 2;
-    margin-top : $default-REM * 2;
-    text-align: center;
-    box-shadow: none;
     background: $blue !important;
   }
   &--divider {
-    @extend %divider;
-    background: $chip-avatar-background-light;
+    @extend .leftSideBar--divider;
   }
 }

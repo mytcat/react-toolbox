@@ -6,7 +6,8 @@ import {IconMenu, MenuItem, MenuDivider } from '../../../react-toolbox/lib/menu'
 import {themr} from 'react-css-themr';
 import topBar from './topbar.scss';
 
-const TOPBAR_CSS = 'topBar';
+const TOP_BAR_CSS = 'topBar';
+const USER_LOGO = 'https://dl.dropboxusercontent.com/u/53778939/User%20avatar.png';
 
 const arrow = {
   cursor: 'pointer'
@@ -25,14 +26,14 @@ const userAvatar = {
 const TopBar = ({theme})=>{
   return (
       <div>
-          <AppBar className={theme[TOPBAR_CSS]}>
+          <AppBar className={theme[TOP_BAR_CSS]}>
             <span style={arrow}>
               <FontIcon value="arrow_back"></FontIcon>
             </span>
             <h4 style={h4Style}>Add New Hardware</h4>
             <div style={userAvatar}>
                 <div>
-                  <img src="https://dl.dropboxusercontent.com/u/53778939/User%20avatar.png"/>
+                  <img src={USER_LOGO}/>
                 </div>
                 <div>
                   <IconMenu icon='arrow_drop_down' position='topRight' menuRipple>
