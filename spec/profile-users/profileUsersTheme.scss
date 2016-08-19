@@ -1,0 +1,27 @@
+$default-REM : 1.8rem;
+
+.profileUsers {
+  background : rgba(128, 0, 255, 0.77);
+  color : #fff;
+  position: relative;
+
+  &--create_buttons_block {
+    position: absolute;
+    right: $default-REM;
+    top : $default-REM /2;
+  }
+  &--create {
+    width: 40px;
+    height: 40px;
+    background: transparent !important;
+    box-shadow: none;
+    color: #fff !important;
+
+    margin-left : $default-REM ;
+  }
+
+  &--card_title {
+    width : 50%;
+    float : left;
+  }
+}

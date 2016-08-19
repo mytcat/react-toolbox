@@ -18,6 +18,7 @@ import {
   HEADER_SUMMARY
 } from '../task__kmc-416/constants';
 import {NavigationSection} from '../custom-components/NavigationSection';
+import Card from '../../components/card';
 import style from '../style';
 
 class ContainerMain extends Component {
@@ -33,18 +34,29 @@ class ContainerMain extends Component {
     })
   }
   renderView(){
+    let st = {
+      padding: '30px 80px',
+      marginLeft: '90px'
+    };
+
     if(this.state.currentIndex <= 5){
       return (
-        <div className={style.app}>
-          <section className={this.props.theme[TASK_KMC_ID]}>
+        <div style={st}>
+          <Card className={this.props.theme[TASK_KMC_ID]}>
             <NavigationSection currentIndex={this.state.currentIndex}/>
             <div className={this.props.theme[CSS_CLASS_DIVIDER]}></div>
             {this.switchView(this.state.currentIndex)}
-          </section>
+          </Card>
         </div>
       )
     } else {
-      return (<_Kmc421 index={6} />)
+      return (
+        <div style={st}>
+          <Card className={this.props.theme[TASK_KMC_ID]}>
+            <_Kmc421 index={6} />
+          </Card>
+        </div>
+      )
     }
 
   }
@@ -67,7 +79,7 @@ class ContainerMain extends Component {
   }
   render(){
     return (
-      <div>
+      <div >
         <TopBar />
         <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}/>
         {this.renderView()}
