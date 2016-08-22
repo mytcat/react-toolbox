@@ -47,7 +47,11 @@ const buttonsContainer = {
 }
 
 class Kmc427 extends React.Component {
-  state = {email: "", password: ""};
+  state = {email: "", password: "", check1: true, check2: false};
+
+  handleChange = (field, value) => {
+    this.setState({...this.state, [field]: value});
+  };
 
   render() {
     return (
@@ -60,12 +64,14 @@ class Kmc427 extends React.Component {
                  value={this.state.email}
                  label="Email"
                  onChange={(v)=>{this.setState({email:v});}}
+                 key="email"
           >
           </Input>
           <Input type="password"
                  value={this.state.password}
                  label="Password"
                  onChange={(p)=>{this.setState({password:p});}}
+                 key="pass"
                  style={passwordInput}
           >
             <FontIcon style={passwordIcon}>visibility</FontIcon>
@@ -73,6 +79,12 @@ class Kmc427 extends React.Component {
           <Checkbox
             checked={this.state.check1}
             label="Remember me"
+            key="checkbox1"
+            onChange={
+              (v) => {
+                this.setState({check1: v});
+              }
+            }
           />
 
         </div>
