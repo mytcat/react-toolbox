@@ -59,18 +59,14 @@ const TEST_DATA_FOR_TABLE = [
     [MISSION_ICON] : <FontIcon value={MISSION_ICON}/>
   }
 ];
-const TestDataForTable = {
-  tableModel : TABLE_MODEL,
-  data : TEST_DATA_FOR_TABLE
-};
 
 const ProfileUsersMissionsHistoryBlock = () => {
 
   return (
     <Table
       selectable={false}
-      model={TestDataForTable.tableModel}
-      source={TestDataForTable.data}
+      model={TABLE_MODEL}
+      source={TEST_DATA_FOR_TABLE}
     />
   )
 };

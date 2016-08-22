@@ -7,13 +7,55 @@ import {
   HARDWARE
 } from './constants';
 
+import {AdminOrgCardDefault, AdminOrgCardExpand} from './adminOrganaizerBlock';
+
 class AdminOrganaizer extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      [MISSION_IN_PROGRESS +'_expanded'] : false,
+      [USERS +'_expanded'] : false,
+      [HARDWARE +'_expanded'] : false,
+      [SCHEDULED_MISSIONS +'_expanded'] : false
+    }
+  }
+  handleExpand(e,title){
+    this.setState(Object.assign({}, this.state, {
+      [title + '_expanded'] : !this.state[title +'_expanded']
+    }));
+  }
+  renderCards() {
+    let {data} = this.props;
+    let keys = Object.keys(data);
+    return keys.map((key, index)=> {
+      let isExpanded = this.state[key + '_expanded'];
+      let getData = !isExpanded ? data[key].filter((el,i)=>i <= 4) : data[key];
+      let fullLength = data[key].length;
+      if (key == USERS || key === HARDWARE) {
+        return <AdminOrgCardExpand key={index}
+                                   title={key}
+                                   data={getData}
+                                   fullLength={fullLength}
+                                   expanded={this.state[key+'_expanded']}
+                                   toggleExpand={this.handleExpand.bind(this)}
+        />
+      }
+      else {
+        return <AdminOrgCardDefault key={index}
+                                    title={key}
+                                    data={getData}
+                                    fullLength={fullLength}
+                                    expanded={this.state[key+'_expanded']}
+                                    toggleExpand={this.handleExpand.bind(this)}
+        />
+      }
+    });
+  }
 
   render(){
     return (
-      <div>
-
-
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around'}}>
+        {this.renderCards()}
       </div>
     )
   }
@@ -21,10 +63,7 @@ class AdminOrganaizer extends Component {
 
 
 AdminOrganaizer.propTypes = {
-  [MISSION_IN_PROGRESS] : PropTypes.array.isRequired,
-  [USERS] : PropTypes.array.isRequired,
-  [SCHEDULED_MISSIONS] : PropTypes.array.isRequired,
-  [HARDWARE] : PropTypes.array.isRequired
+  data : PropTypes.object.isRequired
 };
 
 export {AdminOrganaizer};

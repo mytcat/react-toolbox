@@ -70,14 +70,10 @@ const ProfileUsersHeaderBlock = (
       return (
         <div>
           <CardTitle avatar={userLogo} title={userName} />
-         {/* <Avatar>
-            <img src={USER_LOGO} alt="user-logo"/>
-          </Avatar>*/}
-
         </div>
       )
     }
-  }
+  };
   return (
     <CardTitle className={theme[CSS_PROFILE_USER]}>
       {renderAvatarBlock()}

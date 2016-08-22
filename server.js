@@ -47,15 +47,15 @@ app.get('/profileUsers', function (req, res) {
 app.get('/adminOrganaizer', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/admin_organaizer/index.html'));
 });
-app.get('/container', function (req, res) {
+app.get('/kmc406', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/index.html'));
 });
-app.get('/containerUserProfile', function (req, res) {
+app.get('/kmc424', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/indexUserProfile.html'));
 });
-app.get('/containerAdminOrganaizer', function(req,res){
+app.get('/kmc428', function(req,res){
   res.sendFile(path.join(__dirname , './spec/container-main/indexAdminOrganaizer.html'));
-})
+});
 /* logo */
 app.get('/ksi_logo', function (req, res) {
   res.sendFile(path.join(__dirname, './static/img/svg/ksi_logo.svg'));

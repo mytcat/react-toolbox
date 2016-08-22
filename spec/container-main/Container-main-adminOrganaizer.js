@@ -18,76 +18,207 @@ import {
   HARDWARE
 } from '../admin_organaizer/constants';
 /*    Test data   */
+/*    data to props. optimize data before push it to props, only AdminOrganaizer will have logic
+*     . example , title = user.firstName + user.secondName;
+*                 subtitle = user.userToMissionStatus + user.missionID
+*                 something like this
+* */
 const TEST_DATA_USERS = [
   {
-    firstName : 'firstName #1',
-    secondName : 'secondName #1',
-    missionOwner : '123123#123'
+    title : 'Name SecondName #1',
+    subtitle : 'Mission _status_ #missionID'
   },
   {
-    firstName : 'firstName #2',
-    secondName : 'secondName #2',
-    missionOwner : '656566565656#123'
+    title : 'Name SecondName #2',
+    subtitle : 'Mission _status_ #missionID'
   },
   {
-    firstName : 'firstName #3',
-    secondName : 'secondName #3',
-    missionOwner : '33333#123'
+    title : 'Name SecondName #3',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #4',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #5',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #6',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #7',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #8',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #9',
+    subtitle : 'Mission _status_ #missionID'
+  },
+  {
+    title : 'Name SecondName #10',
+    subtitle : 'Mission _status_ #missionID'
   }
 ];
 const TEST_DATA_MISSIONS_IN_PROGRESS = [
   {
-    missionsName : 'mission #1',
-    missionsOwner : 'name secondName',
-    missionsDate : new Date(),
-    missionsStatus : 'mission started'
+    left: {
+      title : 'missionsName #1',
+      subtitle : 'missionsOwner #1'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'missions started'
+    }
   },
   {
-    missionsName : 'mission #2',
-    missionsOwner : 'name secondName',
-    missionsDate : new Date(),
-    missionsStatus : 'mission started'
+    left: {
+      title : 'missionsName #2',
+      subtitle : 'missionsOwner #2'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'missions started'
+    }
   },
   {
-    missionsName : 'mission #3',
-    missionsOwner : 'name secondName',
-    missionsDate : new Date(),
-    missionsStatus : 'mission started'
+    left: {
+      title : 'missionsName #3',
+      subtitle : 'missionsOwner #3'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'missions started'
+    }
   }
 ];
 const TEST_DATA_HARDWARE = [
   {
-    hardwareName : 'hard #1',
-    hardwareModel : 'model #1',
-    hardwareID : 'id #1'
+    title : 'Hardware Name #1',
+    subtitle : 'Hardware Model + hardWare ID'
   },
   {
-    hardwareName : 'hard #2',
-    hardwareModel : 'model #2',
-    hardwareID : 'id #2'
+    title : 'Hardware Name #2',
+    subtitle : 'Hardware Model + hardWare ID'
   },
   {
-    hardwareName : 'hard #3',
-    hardwareModel : 'model #3',
-    hardwareID : 'id #3'
+    title : 'Hardware Name #3',
+    subtitle : 'Hardware Model + hardWare ID'
+  },
+  {
+    title : 'Hardware Name #4',
+    subtitle : 'Hardware Model + hardWare ID'
+  },
+  {
+    title : 'Hardware Name #5',
+    subtitle : 'Hardware Model + hardWare ID'
+  },
+  {
+    title : 'Hardware Name #6',
+    subtitle : 'Hardware Model + hardWare ID'
+  },
+  {
+    title : 'Hardware Name #7',
+    subtitle : 'Hardware Model + hardWare ID'
   }
+
 ];
 const TEST_DATA_SCHEDULED_MISSIONS = [
   {
-    scheduledMissionName : 'ms_name #1',
-    scheduledMissionOwner : 'ms_owner #1',
-    scheduledMissionBegins : new Date()
+    left: {
+      title : 'schedule_mission #1',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
   },
   {
-    scheduledMissionName : 'ms_name #2',
-    scheduledMissionOwner : 'ms_owner #2',
-    scheduledMissionBegins : new Date()
+    left: {
+      title : 'schedule_mission #2',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
   },
   {
-    scheduledMissionName : 'ms_name #3',
-    scheduledMissionOwner : 'ms_owner #3',
-    scheduledMissionBegins : new Date()
-  }
+    left: {
+      title : 'schedule_mission #3',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
+  {
+    left: {
+      title : 'schedule_mission #4',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
+  {
+    left: {
+      title : 'schedule_mission #5',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
+  {
+    left: {
+      title : 'schedule_mission #6',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
+  {
+    left: {
+      title : 'schedule_mission #7',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
+  {
+    left: {
+      title : 'schedule_mission #8',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
+  {
+    left: {
+      title : 'schedule_mission #9',
+      subtitle : 'schedule_mission Owner'
+    },
+    right : {
+      title : new Date().toString(),
+      subtitle : 'mission begins'
+    }
+  },
 ];
 
 /*    end test data*/
@@ -99,17 +230,17 @@ class ContainerAdminOrganaizer extends Component {
       marginLeft: '90px'
     };
     let testData = {
-      [MISSION_IN_PROGRESS] : [TEST_DATA_MISSIONS_IN_PROGRESS],
-      [USERS] : [TEST_DATA_USERS],
-      [HARDWARE] : [TEST_DATA_HARDWARE],
-      [SCHEDULED_MISSIONS] : [TEST_DATA_SCHEDULED_MISSIONS]
+      [MISSION_IN_PROGRESS] : TEST_DATA_MISSIONS_IN_PROGRESS,
+      [USERS] : TEST_DATA_USERS,
+      [SCHEDULED_MISSIONS] : TEST_DATA_SCHEDULED_MISSIONS,
+      [HARDWARE] : TEST_DATA_HARDWARE
     };
     return (
       <div style={{position : 'relative', minHeight: '100%'}}>
         <TopBar />
         <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}/>
         <div style={st}>
-          <AdminOrganaizer {...testData} />
+          <AdminOrganaizer data={testData} />
         </div>
       </div>
     )
