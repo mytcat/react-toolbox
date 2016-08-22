@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM,{render} from 'react-dom';
 import Root from './root';
 import {_Kmc409_415} from './kmc409_415';
+import {_Kmc427} from './task__kmc-427/index.js';
 import {_Kmc416,_Kmc417, _Kmc418, _Kmc419, _Kmc420, _Kmc421} from './task__kmc-416/index.js';
 import {ContainerMain} from './container-main/Container-main';
 import {ProfileUsersContainer} from './profile-users/profileUsers';
@@ -17,6 +18,9 @@ spec: function(){
 },
   kmc409: function () {
     ReactDOM.render(<_Kmc409_415 />, document.getElementById('toolbox-test'));
+  },
+  kmc427: function () {
+    ReactDOM.render(<_Kmc427 />, document.getElementById('toolbox-test'));
   },
   kmc416 : function(){
     ReactDOM.render(<_Kmc416 />, _doc);
