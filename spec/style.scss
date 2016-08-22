@@ -5,7 +5,6 @@
 @import "../components/button/config";
 
 $offset: 1.8 * $unit;
-
 .app {
   @include no-webkit-scrollbar;
   padding: ($appbar-height + 2) $offset $offset;

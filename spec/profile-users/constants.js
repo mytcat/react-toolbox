@@ -1,7 +1,11 @@
 export const CSS_PROFILE_USER = 'profileUsers';
 export const CSS_PROFILE_USER_CREATE_BUTTON = 'profileUsers--create';
 export const CSS_PROFILE_USER_CREATE_BUTTONS_BLOCK = 'profileUsers--create_buttons_block';
-export const CSS_PROFILE_USER_INPUT = 'profileUsers--input';
+export const CSS_PROFILE_USER_INPUT = 'profileUsers--card_input';
+export const CSS_PROFILE_USER_CARD_TITLE = 'profileUsers--card_title';
+export const CSS_PROFILE_USER_CARD_EDIT = 'profileUsers--card_edit';
+export const CSS_PROFILE_USER_AVATAR_EDIT = 'profileUsers--avatar_edit';
+export const CSS_PROFILE_USER_INPUT_TITLE_EDIT = 'profileUsers--input--title_edit';
 export const ICON_CREATE = 'create';
 export const ICON_DONE = 'done';
 export const ICON_CLOSE = 'close';

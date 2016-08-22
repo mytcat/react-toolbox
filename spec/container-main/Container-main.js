@@ -75,7 +75,7 @@ class ContainerMain extends Component {
   }
   render(){
     return (
-      <div >
+      <div style={{position: 'relative', minHeight: '100%'}}>
         <TopBar />
         <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}/>
         {this.renderView()}

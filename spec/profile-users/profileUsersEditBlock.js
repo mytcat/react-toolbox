@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   CSS_PROFILE_USER_INPUT,
+  CSS_PROFILE_USER_CARD_TITLE
 } from './constants';
 import {Card, CardTitle, CardText} from '../../components/card';
 import Input from '../../components/input';
@@ -19,12 +20,12 @@ const ProfileUsersEditBlock = ({theme, editable, updateFields,fields}) => {
 
     if (editable) {
       return (
-        <Input className={theme[CSS_PROFILE_USER_INPUT]} onChange={(e)=>updateFields(e,field.label)}
+        <Input className={theme[CSS_PROFILE_USER_INPUT]} onChange={(e)=>updateFields(e, 'tempFields', field.label)}
                key={field.index} type={'text'} value={field.value} label={field.label}/>
       )
     } else {
       return (
-        <CardTitle key={field.index} style={{width: '50%', float: 'left'}}
+        <CardTitle key={field.index} className={theme[CSS_PROFILE_USER_CARD_TITLE]}
                    title={field.value} subtitle={field.label}/>
       )
     }

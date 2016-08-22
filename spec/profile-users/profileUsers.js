@@ -20,6 +20,7 @@ const TEST_FIELDS = {
   'Account Status' : ' ',
   'Notice' : ' '
 };
+const USER_NAME = 'Test UserName';
 
 class ProfileUsersContainer extends Component {
   constructor(props){
@@ -27,7 +28,13 @@ class ProfileUsersContainer extends Component {
     this.state = {
       editable : false,
       fields : TEST_FIELDS,
-      temporaryFields : TEST_FIELDS,
+      userName : USER_NAME,
+      userLogo : USER_LOGO,
+      temporary : {
+        tempFields : TEST_FIELDS,
+        tempUserName : USER_NAME,
+        tempUserLogo : USER_LOGO
+      }
     }
   }
   toggleEdit(bool){
@@ -35,41 +42,55 @@ class ProfileUsersContainer extends Component {
       editable : bool
     })
   }
-  handleChange(e,label){
+  handleChange(val,tempSubset, label){
+    if(tempSubset == 'tempFields'){
     this.setState({
-      temporaryFields : Object.assign({},this.state.temporaryFields, {[label] : e})
+      temporary : Object.assign({}, this.state.temporary, {
+        [tempSubset] : Object.assign({},this.state.temporary[tempSubset], { [label] : val})
+      })
     })
+    }
+    else {
+      this.setState({
+        temporary : Object.assign({}, this.state.temporary, {
+          [tempSubset] : val
+        })
+      })
+    }
   }
   saveOrClose(bool) {
     if (bool) {
       this.setState({
-        fields: this.state.temporaryFields,
+        fields: this.state.temporary.tempFields,
+        userName : this.state.temporary.tempUserName,
+        userLogo : this.state.temporary.tempUserLogo
       });
     } else {
       this.setState({
-        temporaryFields : this.state.fields
+        temporary: Object.assign({}, this.state.temporary, {
+          tempFields: this.state.fields,
+          tempUserName : this.state.userName,
+          tempUserLogo : this.state.userLogo
+        })
       });
     }
     this.toggleEdit(false);
   }
 
   render(){
-    let {theme} = this.props;
-    let {temporaryFields, editable} = this.state;
+    let {temporary, editable} = this.state;
+    let {tempUserName, tempUserLogo, tempFields } = temporary;
     return (
       <div>
-        <CardTitle
-          avatar={USER_LOGO}
-          title="Benedict Cumber"
-          className={theme[CSS_PROFILE_USER]}
-        >
           <ThemedProfileUsersHeaderBlock editable={editable}
+                                         userName={tempUserName}
+                                         userLogo={tempUserLogo}
                                          saveOrCloseHandler={this.saveOrClose.bind(this)}
                                          toggleHandler={this.toggleEdit.bind(this)}
+                                         parrentHandler={this.handleChange.bind(this)}
           />
 
-        </CardTitle>
-        <ThemedProfileUserEditBlock fields={temporaryFields}
+        <ThemedProfileUserEditBlock fields={tempFields}
                                     editable={editable}
                                     updateFields={this.handleChange.bind(this)}
         />

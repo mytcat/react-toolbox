@@ -44,13 +44,18 @@ app.get('/kmc421', function (req, res) {
 app.get('/profileUsers', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/profile-users/index.html'));
 });
+app.get('/adminOrganaizer', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/admin_organaizer/index.html'));
+});
 app.get('/container', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/index.html'));
 });
 app.get('/containerUserProfile', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/indexUserProfile.html'));
 });
-
+app.get('/containerAdminOrganaizer', function(req,res){
+  res.sendFile(path.join(__dirname , './spec/container-main/indexAdminOrganaizer.html'));
+})
 /* logo */
 app.get('/ksi_logo', function (req, res) {
   res.sendFile(path.join(__dirname, './static/img/svg/ksi_logo.svg'));
