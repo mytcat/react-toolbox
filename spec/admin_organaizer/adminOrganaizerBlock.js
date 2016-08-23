@@ -1,7 +1,9 @@
 import React, {Proptypes, Component} from 'react';
 import { Card, CardTitle, CardActions,CardText } from '../../components/card';
+import {Avatar} from '../../components/avatar';
 import Button from '../../components/button';
 import FontIcon from '../../components/font_icon';
+import {USER_LOGO} from '../custom-components/topbar';
 
 const AdminOrgCardDefault = (
   {
@@ -85,7 +87,11 @@ const RenderExpandField = ({
   let renderExpandButton = (<Button icon={'more_vert'} floating mini />);
   return (
     <CardText style={{display: 'flex', alignItems : 'center', flex: isExpanded ? '1' : '6'}}>
-      <CardTitle title={title} subtitle={subtitle} style={{flex: '11'}}/>
+      <CardTitle title={title}
+                 subtitle={subtitle}
+                 style={{flex: '11'}}
+                 avatar={<img src={USER_LOGO}/>}
+      />
       {isExpanded ? renderExpandButton : ''}
     </CardText>
   )
