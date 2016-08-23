@@ -1,46 +1,9 @@
-# Date Picker
+# Grid
 
 A [dialog](https://www.google.com/design/spec/components/pickers.html#pickers-date-pickers) date  picker is used to select a single date. The selected day is indicated by a filled circle. The current day is indicated by a different color and type weight.
 
 <!-- example -->
 ```jsx
-import DatePicker from 'react-toolbox/lib/date_picker';
-
-const datetime = new Date(2015, 10, 16);
-const min_datetime = new Date(new Date(datetime).setDate(8));
-datetime.setHours(17);
-datetime.setMinutes(28);
-
-const localeExample = {
-  months: 'urtarrila_otsaila_martxoa_apirila_maiatza_ekaina_uztaila_abuztua_iraila_urria_azaroa_abendua'.split('_'),
-  monthsShort: 'urt._ots._mar._api._mai._eka._uzt._abu._ira._urr._aza._abe.'.split('_'),
-  weekdays: 'igandea_astelehena_asteartea_asteazkena_osteguna_ostirala_larunbata'.split('_'),
-  weekdaysShort: 'ig._al._ar._az._og._ol._lr.'.split('_'),
-  weekdaysLetter: 'ig_al_ar_az_og_ol_lr'.split('_')
-}
-
-class DatePickerTest extends React.Component {
-  state = {date2: datetime};
-
-  handleChange = (item, value) => {
-    this.setState({...this.state, [item]: value});
-  };
-
-  render () {
-    return (
-      <section>
-        <DatePicker label='Birthdate' sundayFirstDayOfWeek onChange={this.handleChange.bind(this, 'date1')} value={this.state.date1} />
-        <DatePicker label='Locale (String) - Spanish' locale='es' onChange={this.handleChange.bind(this, 'date1')} value={this.state.date1} />
-        <DatePicker label='Locale (Object) - Basque' locale={localeExample} onChange={this.handleChange.bind(this, 'date1')} value={this.state.date1} />
-        <DatePicker label='Expiration date' sundayFirstDayOfWeek minDate={min_datetime} onChange={this.handleChange.bind(this, 'date2')} value={this.state.date2} />
-        <DatePicker label='Formatted date' sundayFirstDayOfWeek inputFormat={(value) => `${value.getDate()}/${value.getMonth() + 1}/${value.getFullYear()}`} onChange={this.handleChange.bind(this, 'date3')} value={this.state.date3} />
-      </section>
-    );
-  }
-}
-```
-
-If you want to provide a theme via context, the component key is `RTDatePicker`.
 
 ## Properties
 
@@ -66,23 +29,6 @@ If you want to provide a theme via context, the component key is `RTDatePicker`.
 
 | Name     | Description|
 |:---------|:-----------|
-| `active` | Used for the active day and year.|
-| `button` | Used for the buttons in the dialog.|
-| `calendar` | Used for the calendar root element.|
-| `calendarWrapper` | Used as wrapper for the calendar component inside dialog.|
-| `date` | Used for the date element inside header.|
-| `day` | Used for the day element inside the calendar.|
-| `days` | Used for the list of days inside a month.|
-| `dialog` | Used for the dialog component.|
-| `disabled` | Added to day element when day is disabled.|
-| `header` | Used for the dialog header,.|
-| `input` | Used for Input element that opens the picker.|
-| `month` | Used for the month root element.|
-| `monthsDisplay` | Added to the root dialog when months are displayed.|
-| `next` | Used for the next month icon.|
-| `prev` | Used for the prev month icon.|
-| `title` | Used for the month title element.|
-| `week` | Used for the weekdays wrapper.|
-| `year` | Used for the year element inside header.|
-| `years` | Used for the years list in years view.|
-| `yearsDisplay` | Added to the root dialog when years are displayed.|
+| `small` | small column .|
+| `medium` | medium column.|
+| `large` | large column.|
