@@ -4,7 +4,7 @@ import React from 'react';
 import Button, { IconButton } from '../components/button';
 import Dropdown from '../components/dropdown';
 import Input from '../components/input';
-import Card, { CardActions, CardMedia, CardText, CardTitle } from '../components/card';
+import {Card, CardActions, CardMedia, CardText, CardTitle } from '../components/card';
 import {TopBar} from './custom-components/topbar.js';
 import {LeftSideBar} from './left-side-bar/LeftSideBar';
 import {PhotoButton} from './custom-components/PhotoButton.js';

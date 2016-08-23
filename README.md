@@ -16,6 +16,7 @@ $ cd ../
 $ npm start
 
 $ open http://0.0.0.0:8080/kmc409-415
+$ open http://0.0.0.0:8080/kmc427
 
 $ open http://0.0.0.0.8080/kmc406
 $ open http://0.0.0.0:8080/kmc416

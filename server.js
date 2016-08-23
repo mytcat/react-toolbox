@@ -23,6 +23,10 @@ app.get('/', function (req, res) {
 app.get('/kmc409-415', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/kmc409_415.html'));
 });
+
+app.get('/kmc427', function (req, res) {
+  res.sendFile(path.join(__dirname, './spec/task__kmc-427/index.html'));
+});
 app.get('/kmc416', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/task__kmc-416/index.html'));
 });
