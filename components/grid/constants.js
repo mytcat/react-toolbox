@@ -21,3 +21,4 @@ export const CSS_SMALL_UP = 'small-up';
 export const CSS_MEDIUM_UP = 'medium-up';
 export const CSS_LARGE_UP = 'large-up';
 export const CSS_ALIGN = 'align';
+export const CSS_SHRINK = 'shrink';

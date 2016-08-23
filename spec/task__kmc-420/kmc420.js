@@ -21,6 +21,7 @@ import {
   CSS_CLASS_CARD
 } from '../task__kmc-416/constants';
 
+import {Row, Col} from '../../components/grid/index';
 
 class Kmc420 extends Component {
 
@@ -83,7 +84,20 @@ class Kmc420 extends Component {
           <CardTitle className={theme[CSS_CARD_GROUP]} title='AA#322' subtitle="Model Number"/>
         </section>
         {/*   Navigation buttons*/}
-        <div style={{overflow: 'hidden'}}>
+        <Row expanded={true} align={'middle'}>
+          <Col small={2}>
+            <Button label={BUTTON_BACK} flat onClick={(e)=> {
+              parentHandler(--index)
+            }}/>
+          </Col>
+          <Col small={4} offset={'small-offset-6'} align={'stretch'}>
+            <Button label={BUTTON_CANCEL} flat/>
+            <Button label={BUTTON_NEXT} flat primary onClick={(e)=> {
+              parentHandler(++index)
+            }}/>
+          </Col>
+        </Row>
+        {/*<div style={{overflow: 'hidden'}}>
           <Button label={BUTTON_BACK} flat style={{float: 'left'}} onClick={(e)=> {
             parentHandler(--index)
           }}/>
@@ -91,7 +105,7 @@ class Kmc420 extends Component {
           <Button label={BUTTON_NEXT} flat primary style={{float: 'right'}} onClick={(e)=> {
             parentHandler(++index)
           }}/>
-        </div>
+        </div>*/}
       </div>
     )
   }
