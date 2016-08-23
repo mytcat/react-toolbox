@@ -24,10 +24,13 @@ import {
   CSS_CLASS_DIVIDER
 } from './constants';
 
+import DropZone from '../custom-components/DropZone';
+
 
 import style from '../style';
 
 import {PhotoButton} from '../custom-components/PhotoButton';
+
 
 // form section
 const styleForFormBlock = {
@@ -43,7 +46,13 @@ const styleForNavigationButtonsWrapper = {
 };
 
 class Kmc416 extends Component{
-
+  constructor(props){
+    super(props);
+    this.state = {
+      file : null,
+      imagePreviewUrl : ''
+    }
+  }
 
   renderFormInput(props={}){
     let {flexWidth, ...other} = props;
@@ -58,15 +67,41 @@ class Kmc416 extends Component{
       <Button {...props}/>
     )
   }
+  handleIMG(file,res){
+    this.setState({
+      imgUrl : res
+    })
+  }
+    let reader, file;
+    e.preventDefault();
+    reader = new FileReader();
+    if(e.dataTransfer){
+      file = e.dataTransfer.files[0];
+    }
+    else {
+      file = e.target.files[0];
+    }
+    reader.onloadend = () => {
+      this.setState({
+        // isDragActive : false
+        file : file,
+        imagePreviewUrl : reader.result
+      },()=>{
+        // this.props.handlerOnChange(file,reader.result)
+      });
+    }
+
+    reader.readAsDataURL(file)
+  }
   render(){
     let {parentHandler, index} = this.props;
     return (
      <div>
-          {/*   Header    */}
-
-          {/*   Photo section*/}
-          <PhotoButton icon={ICON_PHOTO_CAMERA}/>
-          {/*   Form section*/}
+          <DropZone handlerOnChange={this.onChangeHandler.bind(this)}>
+            <PhotoButton icon={ICON_PHOTO_CAMERA}
+                         imgUrl= {this.state.imagePreviewUrl}
+                         handlerOnChange={this.onChangeHandler.bind(this)}/>
+          </DropZone>
             <div style={styleForFormBlock}>
                 {this.renderFormInput({type: 'text', label : FORM_COMPANY_NAME, flexWidth : 45})}
                 {this.renderFormInput({type: 'text', label : FORM_ID_NUMBER, flexWidth : 45})}

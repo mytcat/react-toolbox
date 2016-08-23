@@ -60,6 +60,9 @@ app.get('/kmc424', function (req, res) {
 app.get('/kmc428', function(req,res){
   res.sendFile(path.join(__dirname , './spec/container-main/indexAdminOrganizer.html'));
 });
+app.get('/container', function(req,res){
+  res.sendFile(path.join(__dirname , './spec/container-main/index.html'));
+});
 /* logo */
 app.get('/ksi_logo', function (req, res) {
   res.sendFile(path.join(__dirname, './static/img/svg/ksi_logo.svg'));
