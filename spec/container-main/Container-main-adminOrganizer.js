@@ -8,7 +8,7 @@ import {TASK_KMC_ID} from '../task__kmc-416/constants';
 import {themr} from 'react-css-themr';
 import theme from '../task__kmc-416/theme.scss';
 import style from '../style';
-import {AdminOrganaizer} from '../admin_organaizer/adminOrganaizer';
+import {AdminOrganizer} from '../admin_organaizer/adminOrganaizer';
 
 
 import {
@@ -223,7 +223,7 @@ const TEST_DATA_SCHEDULED_MISSIONS = [
 
 /*    end test data*/
 
-class ContainerAdminOrganaizer extends Component {
+class ContainerAdminOrganizer extends Component {
   render(){
     let st = {
       padding: '30px 80px',
@@ -240,11 +240,11 @@ class ContainerAdminOrganaizer extends Component {
         <TopBar />
         <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}/>
         <div style={st}>
-          <AdminOrganaizer data={testData} />
+          <AdminOrganizer data={testData} />
         </div>
       </div>
     )
   }
 }
 
-export {ContainerAdminOrganaizer};
+export {ContainerAdminOrganizer};

@@ -9,7 +9,7 @@ import {
 
 import {AdminOrgCardDefault, AdminOrgCardExpand} from './adminOrganaizerBlock';
 
-class AdminOrganaizer extends Component {
+class AdminOrganizer extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -62,8 +62,8 @@ class AdminOrganaizer extends Component {
 }
 
 
-AdminOrganaizer.propTypes = {
+AdminOrganizer.propTypes = {
   data : PropTypes.object.isRequired
 };
 
-export {AdminOrganaizer};
+export {AdminOrganizer};

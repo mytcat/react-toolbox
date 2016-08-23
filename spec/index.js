@@ -7,8 +7,8 @@ import {_Kmc416,_Kmc417, _Kmc418, _Kmc419, _Kmc420, _Kmc421} from './task__kmc-4
 import {ContainerMain} from './container-main/Container-main';
 import {ProfileUsersContainer} from './profile-users/profileUsers';
 import {ContainerMainUserProfile} from './container-main/Container-main-usersProfile';
-import {AdminOrganaizer} from './admin_organaizer/adminOrganaizer';
-import {ContainerAdminOrganaizer} from './container-main/Container-main-adminOrganaizer';
+import {AdminOrganizer} from './admin_organaizer/adminOrganaizer';
+import {ContainerAdminOrganizer} from './container-main/Container-main-adminOrganizer';
 
 const _doc = document.getElementById('toolbox-test');
 window.app = {
@@ -43,16 +43,16 @@ spec: function(){
   profileUsers : function(){
     ReactDOM.render(<ProfileUsersContainer />, _doc);
   },
-  adminOrganaizer : function(){
-    ReactDOM.render(<AdminOrganaizer />, _doc);
+  adminOrganizer : function(){
+    ReactDOM.render(<AdminOrganizer />, _doc);
   },
   container : function(){
     render(<ContainerMain />,_doc)
   },
-  containerUserProfile : function(){
+  kmc424 : function(){
     render(<ContainerMainUserProfile />, _doc)
   },
-  containerAdminOrganaizer : function(){
-    render(<ContainerAdminOrganaizer />, _doc)
+  kmc428 : function(){
+    render(<ContainerAdminOrganizer />, _doc)
   }
 }

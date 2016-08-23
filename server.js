@@ -58,7 +58,7 @@ app.get('/kmc424', function (req, res) {
   res.sendFile(path.join(__dirname, './spec/container-main/indexUserProfile.html'));
 });
 app.get('/kmc428', function(req,res){
-  res.sendFile(path.join(__dirname , './spec/container-main/indexAdminOrganaizer.html'));
+  res.sendFile(path.join(__dirname , './spec/container-main/indexAdminOrganizer.html'));
 });
 /* logo */
 app.get('/ksi_logo', function (req, res) {

@@ -1,5 +1,5 @@
 import {themr} from 'react-css-themr';
-import theme from './theme.scss';
+import theme from '../task__kmc-416/theme.scss';
 
 import Kmc427 from '../task__kmc-427/kmc427';
 
