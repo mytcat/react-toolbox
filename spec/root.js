@@ -29,8 +29,13 @@ import Tabs from './components/tabs';
 import Tooltip from './components/tooltip';
 import style from './style';
 
+
+
+import {TestGrid} from './components/rx-grid';
+
 const Root = () => (
   <div className={style.app}>
+    <TestGrid/>
     <AppBar className={style.appbar} fixed flat>
       <h1>React Toolbox <small>Spec {VERSION}</small></h1>
       <ButtonToolbox
