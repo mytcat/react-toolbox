@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react';
+import React, {PropTypes, Component} from 'react';
 import ReactDOM from 'react-dom';
 import Button from '../../components/button';
 import FontIcon from '../../components/font_icon';
@@ -65,5 +65,5 @@ class UploadButton extends Component {
 }
 
 const applyTheme = (Component) => themr('photoButton', photoButtonTheme)(Component);
-const ThemePhotoButton = applyTheme(PhotoButton)
-export {ThemePhotoButton as PhotoButton}
+const ThemePhotoButton = applyTheme(UploadButton)
+export {ThemePhotoButton as UploadButton}
