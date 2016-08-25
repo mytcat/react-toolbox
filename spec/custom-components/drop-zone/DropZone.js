@@ -1,5 +1,4 @@
 import React, {PropTypes, Component} from 'react';
-import ReactDOM from 'react-dom';
 
 class DropZone extends React.Component {
   constructor(props) {
@@ -52,5 +51,11 @@ class DropZone extends React.Component {
     )
   }
 }
+
+DropZone.propTypes = {
+  handlerOnChange : PropTypes.func.isRequired,
+  children : PropTypes.any,
+  className : PropTypes.string
+};
 
 export default DropZone;

@@ -24,12 +24,12 @@ import {
   CSS_CLASS_DIVIDER
 } from './constants';
 
-import DropZone from '../custom-components/DropZone';
+import DropZone from '../custom-components/drop-zone/DropZone';
 
 
 import style from '../style';
 
-import {PhotoButton} from '../custom-components/PhotoButton';
+import {PhotoButton} from '../custom-components/upload-button/PhotoButton';
 
 
 // form section
@@ -67,11 +67,7 @@ class Kmc416 extends Component{
       <Button {...props}/>
     )
   }
-  handleIMG(file,res){
-    this.setState({
-      imgUrl : res
-    })
-  }
+  onChangeHandler(e){
     let reader, file;
     e.preventDefault();
     reader = new FileReader();
@@ -98,9 +94,7 @@ class Kmc416 extends Component{
     return (
      <div>
           <DropZone handlerOnChange={this.onChangeHandler.bind(this)}>
-            <PhotoButton icon={ICON_PHOTO_CAMERA}
-                         imgUrl= {this.state.imagePreviewUrl}
-                         handlerOnChange={this.onChangeHandler.bind(this)}/>
+          <h3>dsfsdf</h3>
           </DropZone>
             <div style={styleForFormBlock}>
                 {this.renderFormInput({type: 'text', label : FORM_COMPANY_NAME, flexWidth : 45})}

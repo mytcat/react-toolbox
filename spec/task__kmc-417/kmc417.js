@@ -7,7 +7,7 @@ import {Avatar} from '../../components/avatar';
 import {Input} from '../../components/input';
 import {NavigationSection} from '../custom-components/NavigationSection';
 import style from '../style';
-import {PhotoButton} from '../custom-components/PhotoButton';
+import {PhotoButton} from '../custom-components/upload-button/PhotoButton';
 
 // import constants
 import {

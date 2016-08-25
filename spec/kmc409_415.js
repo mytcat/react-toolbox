@@ -7,7 +7,7 @@ import Input from '../components/input';
 import {Card, CardActions, CardMedia, CardText, CardTitle } from '../components/card';
 import {TopBar} from './custom-components/topbar.js';
 import {LeftSideBar} from './left-side-bar/LeftSideBar';
-import {PhotoButton} from './custom-components/PhotoButton.js';
+import {PhotoButton} from './custom-components/upload-button/PhotoButton.js';
 import style from './style';
 
 import {themr} from 'react-css-themr';
