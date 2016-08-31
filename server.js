@@ -73,6 +73,9 @@ app.get('/org_logo', function (req, res) {
 app.get('/user_logo', function (req, res) {
   res.sendFile(path.join(__dirname, './static/img/user_icon_congr.png'));
 });
+app.get('/live4black', function (req, res) {
+  res.sendFile(path.join(__dirname, './static/img/svg/live4black.svg'));
+});
 
 
 
