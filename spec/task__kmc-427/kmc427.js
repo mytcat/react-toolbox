@@ -6,15 +6,25 @@ import Checkbox from '../../components/checkbox'
 import Input from '../../components/input';
 import FontIcon from '../../components/font_icon';
 import {Card, CardActions, CardMedia, CardText, CardTitle} from '../../components/card';
-import {KSI_ALERT_COLOR, KSI_SECONDARY_COLOR, FORGOT_BUTTON_COLOR} from '../constants';
+import {KSI_ALERT_COLOR, FORGOT_BUTTON_COLOR} from '../constants';
+import theme from './theme.scss';
 import {TopBar} from '../custom-components/topbar.js';
 import style from '../style';
 
 import {themr} from 'react-css-themr';
 
 const cardStyle = {
-  width: '350px',
-  color: KSI_ALERT_COLOR
+  width: '380px',
+  color: KSI_ALERT_COLOR,
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%,-50%)'
+}
+
+const cardTitleStyle = {
+  fontWeight: 500,
+  padding: '6rem 0 3rem 0'
 }
 
 const forgotButton = {
@@ -25,25 +35,11 @@ const signInButton = {
   background: KSI_ALERT_COLOR
 }
 
-const passwordInput = {
-  position: 'relative'
-}
-
-const passwordIcon = {
-  position: 'absolute',
-  right: '0',
-  top: '39%',
-  color: KSI_SECONDARY_COLOR
-}
-
-const checkboxStyle = {
-  padding: '25px 0 40px 0'
-}
-
 const buttonsContainer = {
   display: 'flex',
   flexDirection: 'row',
-  justifyContent: 'space-between'
+  justifyContent: 'space-between',
+  padding: '2rem 2rem 2rem 1.3rem'
 }
 
 class Kmc427 extends React.Component {
@@ -56,10 +52,9 @@ class Kmc427 extends React.Component {
   render() {
     return (
       <Card style={cardStyle}>
-        <CardTitle
-          title='Log In'
-        />
-        <div style={{padding: '0 5%'}}>
+
+        <div style={{padding: '0 2rem'}}>
+          <h2 style={cardTitleStyle}>Log In</h2>
           <Input type="email"
                  value={this.state.email}
                  label="Email"
@@ -71,22 +66,23 @@ class Kmc427 extends React.Component {
                  value={this.state.password}
                  label="Password"
                  onChange={(p)=>{this.setState({password:p});}}
+                 icon='visibility'
                  key="pass"
-                 style={passwordInput}
+                 className={theme['input']}
           >
-            <FontIcon style={passwordIcon}>visibility</FontIcon>
           </Input>
           <Checkbox
             checked={this.state.check1}
             label="Remember me"
             key="checkbox1"
+            // style={{checkboxStyle}}
+            className={theme['field']}
             onChange={
               (v) => {
                 this.setState({check1: v});
               }
             }
           />
-
         </div>
 
         <CardActions style={buttonsContainer}>

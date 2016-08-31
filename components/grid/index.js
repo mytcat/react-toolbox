@@ -10,8 +10,10 @@ import {
 
 const applyTheme = (Component, id)=>themr(id, _theme)(Component);
 
-const Col = applyTheme(RTColumn, RT_COLUMN);
-const Row = applyTheme(RTRow, RT_ROW);
+const ThemedCol = applyTheme(RTColumn, RT_COLUMN);
+const ThemedRow = applyTheme(RTRow, RT_ROW);
 
-export {Row, Col};
+export {ThemedRow as Row};
+export {ThemedCol as Col};
+
 

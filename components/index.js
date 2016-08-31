@@ -4,6 +4,7 @@ export Autocomplete from './autocomplete';
 export Avatar from './avatar';
 export * from './button';
 export * from './card';
+export * from './grid';
 export Chip from './chip';
 export Checkbox from './checkbox';
 export DatePicker from './date_picker';
