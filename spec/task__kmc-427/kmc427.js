@@ -21,7 +21,7 @@ const pageBackground = {
 }
 
 const rectangle = {
-  width: '660px',
+  width: '700px',
   height: '380px',
   position: 'absolute',
   top: '50%',
@@ -35,18 +35,18 @@ const logoAndCard = {
   position: 'absolute',
   top: '50%',
   left: '50%',
-  transform: 'translate(-50%,-50%)',
+  transform: 'translate(-45%,-50%)',
   display: 'flex'
 }
 
 const live4Logo = {
-  width: '150px'
+  width: '150px',
+  marginRight: '60px'
 }
 
 const cardStyle = {
   width: '380px',
   color: KSI_ALERT_COLOR,
-  marginLeft: '50px'
 }
 
 const cardTitleStyle = {
@@ -97,7 +97,7 @@ class Kmc427 extends React.Component {
                      value={this.state.password}
                      label="Password"
                      onChange={(p)=>{this.setState({password:p});}}
-                     icon='visibility'
+                     icon='visibility' // or 'visibility_off' when user start inserting password
                      key="pass"
                      className={theme['input']}
               >
