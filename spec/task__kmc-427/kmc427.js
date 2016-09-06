@@ -44,14 +44,9 @@ const live4Logo = {
   marginRight: '60px'
 }
 
-const cardStyle = {
-  width: '380px',
-  color: KSI_ALERT_COLOR,
-}
-
 const cardTitleStyle = {
   fontWeight: 500,
-  padding: '6rem 0 3rem 0'
+  padding: '4rem 0 3rem 0'
 }
 
 const forgotButton = {
@@ -83,14 +78,17 @@ class Kmc427 extends React.Component {
         <div style={rectangle}></div>
         <div style={logoAndCard}>
           <img src="/live4black" style={live4Logo}/>
-          <Card style={cardStyle}>
+          <Card className={theme['card']}>
             <div style={{padding: '0 2rem'}}>
-              <h2 style={cardTitleStyle}>Log In</h2>
+              <CardTitle style={cardTitleStyle}>Log In</CardTitle>
+              <p className={theme['enter-email-message']}>Enter your email address and we'll send you instruction on how
+                to reset your password.</p>
               <Input type="email"
                      value={this.state.email}
                      label="Email"
                      onChange={(v)=>{this.setState({email:v});}}
                      key="email"
+                // error='Please enter your email'
               >
               </Input>
               <Input type="password"
@@ -100,6 +98,7 @@ class Kmc427 extends React.Component {
                      icon='visibility' // or 'visibility_off' when user start inserting password
                      key="pass"
                      className={theme['input']}
+                // error='Please enter your password'
               >
               </Input>
               <Checkbox

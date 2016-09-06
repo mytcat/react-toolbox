@@ -1,10 +1,9 @@
-/* global VERSION */
 import '../components/commons.scss';
 import React from 'react';
-import Button, { IconButton } from '../components/button';
+import Button, {IconButton} from '../components/button';
 import Dropdown from '../components/dropdown';
 import Input from '../components/input';
-import {Card, CardActions, CardMedia, CardText, CardTitle } from '../components/card';
+import {Card, CardActions, CardMedia, CardText, CardTitle} from '../components/card';
 import {TopBar} from './custom-components/topbar.js';
 import {LeftSideBar} from './left-side-bar/LeftSideBar';
 import {PhotoButton} from './custom-components/upload-button/PhotoButton.js';
@@ -43,14 +42,14 @@ const fieldStyle = {
 }
 
 const bottomFields = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'flex-end'
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'flex-end'
 }
 
 const cardButtons = {
-    display: 'flex',
-    justifyContent: 'flex-end'
+  display: 'flex',
+  justifyContent: 'flex-end'
 }
 
 const cancelButton = {
@@ -69,7 +68,7 @@ const hardware_types = [
 const hardware_model = [
   {label: "MC4200", value: "1"},
   {label: "MC5100", value: "2"},
-  {label: "Add another...", value:"3"}
+  {label: "Add another...", value: "3"}
 ]
 
 const manufacturers = [
@@ -86,13 +85,15 @@ class Dropdowns extends React.Component {
     dd3: 0
   };
 
-  dropDown1Changed (value){
+  dropDown1Changed (value) {
     this.setState({dd1: value});
   }
-  dropDown2Changed (value){
+
+  dropDown2Changed (value) {
     this.setState({dd2: value});
   }
-  dropDown3Changed (value){
+
+  dropDown3Changed (value) {
     this.setState({dd3: value});
   }
 
@@ -105,12 +106,13 @@ class Dropdowns extends React.Component {
   customImg (item) {
     const contentStyle = {
       display: 'none'
-  }};
+    }
+  };
 
   customDropdownItem (data) {
     return (
       <div className={style.dropdownTemplate}>
-        <img className={style.customImg} src={data.img} />
+        <img className={style.customImg} src={data.img}/>
         <div className={style.dropdownTemplateContent}>
           <span>{data.label}</span>
         </div>
@@ -144,19 +146,20 @@ class Dropdowns extends React.Component {
           </div>
         </div>
         <div style={bottomFields}>
-            <div style={fieldStyle}>
-                <ThemedDropDown
-                  label="Hardware model"
-                  ref="dd3"
-                  onChange={this.dropDown3Changed.bind(this)}
-                  source={hardware_model}
-                  template={this.customDropdownItem}
-                  value={this.state.dd3}
-                />
-            </div>
-            <div style={fieldStyle}>
-              <Input type='text' label='Unique ID' name='id' value={this.state.id} onChange={this.handleChange.bind(this, 'id')} />
-            </div>
+          <div style={fieldStyle}>
+            <ThemedDropDown
+              label="Hardware model"
+              ref="dd3"
+              onChange={this.dropDown3Changed.bind(this)}
+              source={hardware_model}
+              template={this.customDropdownItem}
+              value={this.state.dd3}
+            />
+          </div>
+          <div style={fieldStyle}>
+            <Input type='text' label='Unique ID' name='id' value={this.state.id}
+                   onChange={this.handleChange.bind(this, 'id')}/>
+          </div>
         </div>
       </div>
     );
@@ -165,44 +168,45 @@ class Dropdowns extends React.Component {
 
 
 class IdInput extends React.Component {
-  state = { id: ''};
+  state = {id: ''};
 
   handleChange = (id, value) => {
     this.setState({...this.state, [id]: value});
   };
 
-  render () {
-    return null;
-  }
+  // render () {
+  //   return null;
+  // }
 }
 
 const Kmc409_415 = ({theme}) => {
-  return (
-   <div>
-    <TopBar></TopBar>
-    <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}></LeftSideBar>
-    <div style={cardContainer}>
-      <Card  className={theme['customDropDown--card']} style={{width: '100%'}}>
-        <PhotoButton icon="photo_camera">
-        </PhotoButton>
-        <Dropdowns></Dropdowns>
-        <IdInput></IdInput>
-        <div style={cardButtons}>
-          <CardActions>
-            <Button label="cancel" style={cancelButton}/>
-            <Button label="finish" style={finishButton}/>
-          </CardActions>
+  render()
+  {
+    return (
+      <div>
+        <TopBar></TopBar>
+        <LeftSideBar leftSideBarColor={CSS_LEFT_SIDE_BAR_COLOR_BLUE}></LeftSideBar>
+        <div style={cardContainer}>
+          <Card className={theme['customDropDown--card']} style={{width: '100%'}}>
+            <PhotoButton icon="photo_camera">
+            </PhotoButton>
+            <Dropdowns></Dropdowns>
+            <IdInput></IdInput>
+            <div style={cardButtons}>
+              <CardActions>
+                <Button label="cancel" style={cancelButton}/>
+                <Button label="finish" style={finishButton}/>
+              </CardActions>
+            </div>
+          </Card>
         </div>
-      </Card>
-    </div>
-
-
-  </div>
-)
+      </div>
+    )
+  }
 };
 
 /* DropDown*/
-const CustomDropDown = ({theme, ...props}) =>{
+const CustomDropDown = ({theme, ...props}) => {
   return (
 
     <Dropdown
